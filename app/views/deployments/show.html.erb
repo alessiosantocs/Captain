@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @deployment.version %>
+</p>
+
+Great repos:<br>
+<ul>
+<% @repos.each do |repo| %>
+	<li><%= repo.name %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_deployment_path(@deployment) %> |
+<%= link_to 'Back', deployments_path %>
