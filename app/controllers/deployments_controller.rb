@@ -16,12 +16,14 @@ class DeploymentsController < ApplicationController
 	def show
 		token = current_user.authentications.first.access_token
 		secret = current_user.authentications.first.token_secret
+		consumerkey = current_user.authentications.first.consumer_key
+		consumersecret = current_user.authentications.first.consumer_secret
 		bitbucket = BitBucket.new do |config|
 			config.oauth_token = token
 			config.oauth_secret = secret
 
-			config.client_id = "JL3V9K5WbQDW5YkCsp"
-			config.client_secret = "sxrreXwrd9tJBmpYcetaPt8h9cU2ezzF"
+			config.client_id = consumerkey
+			config.client_secret = consumersecret
 		end
 		
 		@repos = bitbucket.repos.all
