@@ -1,14 +1,16 @@
+<%= title "Deployment #{@deployment.created_at}" %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Version:</strong>
-  <%= @deployment.version %>
+
 </p>
 
-Great repos:<br>
+Great issues:<br>
 <ul>
-<% @repos.each do |repo| %>
-	<li><%= repo.name %></li>
+<% @issues.each do |issue| %>
+	<li><%= issue.title %> - <%= issue['status'] %></li>
 <% end %>
 </ul>
 

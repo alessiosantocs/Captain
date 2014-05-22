@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 			:recoverable, :rememberable, :trackable, :validatable
 
 	has_many :authentications
+	has_many :deployments
 
 	# Signup with omniauth
 	def apply_omniauth(omniauth)

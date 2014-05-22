@@ -12,6 +12,13 @@ Deploydapp::Application.routes.draw do
 	resources :authentications
 
 
+	# Here we go with the api
+	namespace :api, defaults: {format: 'json'} do
+		namespace :v1 do
+			resources :deployments
+		end
+	end
+
 
 	root :to => "deployments#index"
 

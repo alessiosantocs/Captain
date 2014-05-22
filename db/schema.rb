@@ -26,7 +26,11 @@ ActiveRecord::Schema.define(version: 20140429215255) do
   end
 
   create_table "deployments", force: true do |t|
-    t.string   "version"
+    t.string   "branch"
+    t.string   "environment"
+    t.string   "revision"
+    t.string   "repo"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

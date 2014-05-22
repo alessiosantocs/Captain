@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create the main user
+main_user_email = "alessio.santo@pazienti.it"
+User.create!(:email => main_user_email, :password => "pazienti") unless User.find_by_email(main_user_email).present?
