@@ -71,10 +71,7 @@ end
 # FOR PRODUCTION  ================================================
 
 	group :production do 
-		# Get better raise errors
-		gem "better_errors"
-		# And let me inspect them
-		gem "binding_of_caller"
+
 	end
 
 #=================================================================

@@ -1,5 +1,6 @@
-PATH
-  remote: ~/projects/bitbucket
+GIT
+  remote: git://github.com/alessiosantocs/bitbucket.git
+  revision: f12ecb5f6bbbe2b4bac56abc14b20f3199e324b0
   specs:
     bitbucket_rest_api (0.1.5)
       faraday (~> 0.9.0)
