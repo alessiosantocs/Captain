@@ -7,6 +7,13 @@
 
 </p>
 
+Great pull requests:<br>
+<ul>
+<% @pull_requests[2].each do |pull_request| %>
+	<li><%= pull_request.title %> - <%= pull_request['status'] %></li>
+<% end %>
+</ul>
+
 Great issues:<br>
 <ul>
 <% @issues.each do |issue| %>

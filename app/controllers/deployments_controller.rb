@@ -29,7 +29,7 @@ class DeploymentsController < ApplicationController
 			config.client_secret = consumersecret
 		end
 
-		raise
+		@pull_requests = bitbucket.pull_requests.list_repo(@deployment.repo_owner, @deployment.repo_name, {:state => 'merged'})
 		@issues = bitbucket.issues.list_repo(@deployment.repo_owner, @deployment.repo_name, {status: "resolved"})
 
 	end
