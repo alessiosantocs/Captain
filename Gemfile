@@ -41,6 +41,16 @@ gem 'jbuilder', '~> 1.2'
 
 #=================================================================
 
+# FOR DEPLOYMENTS ================================================
+
+	# Accessing github's api
+	gem 'github_api'
+
+	# Accessing bitbucket's api
+	gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git' #, :path => '~/projects/bitbucket'
+
+#=================================================================
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -54,17 +64,6 @@ end
 		gem "better_errors"
 		# And let me inspect them
 		gem "binding_of_caller"
-
-		# FOR DEPLOYMENTS ================================================
-
-			# Accessing github's api
-			gem 'github_api'
-
-			# Accessing bitbucket's api
-			gem 'bitbucket_rest_api', :path => '~/projects/bitbucket'
-
-		#=================================================================
-
 	end
 
 #=================================================================
@@ -76,17 +75,6 @@ end
 		gem "better_errors"
 		# And let me inspect them
 		gem "binding_of_caller"
-
-		# FOR DEPLOYMENTS ================================================
-
-			# Accessing github's api
-			gem 'github_api'
-
-			# Accessing bitbucket's api
-			gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git'
-
-		#=================================================================
-
 	end
 
 #=================================================================
