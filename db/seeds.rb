@@ -5,7 +5,9 @@
 User.create!(:email => "alessio.santo@pazienti.it", :password => "pazienti")
 
 # Create a default application for this user
-DeployableApplication.create!(:name => "pazienti2", user: User.first)
+DeployableApplication.create!(:name => "Pazienti.it", 
+							  :user => User.first, 
+							  :repo => "https://piazz32@bitbucket.org/pazientidevs/pazienti2.git")
 
 
 # Your first deployment

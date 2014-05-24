@@ -38,13 +38,13 @@ gem 'jbuilder', '~> 1.2'
 
 #=================================================================
 
-# FOR DEPLOYMENTS ================================================
+# FOR DEPLOYMENTS MODEL ==========================================
 
 	# Accessing github's api
-	gem 'github_api'
+	# gem 'github_api'
 
 	# Accessing bitbucket's api
-	gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git' #, :path => '~/projects/bitbucket'
+	gem 'bitbucket_rest_api', :path => '~/projects/bitbucket' #, :git => 'git://github.com/alessiosantocs/bitbucket.git'
 
 #=================================================================
 
