@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem "binding_of_caller"
-
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -71,7 +70,7 @@ end
 # FOR PRODUCTION  ================================================
 
 	group :production do 
-
+		gem 'rails_12factor'
 	end
 
 #=================================================================

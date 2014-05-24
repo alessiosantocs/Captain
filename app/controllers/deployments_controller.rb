@@ -86,7 +86,7 @@ class DeploymentsController < ApplicationController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_deployment
-			@deployment = current_user.deployments.find(params[:id])
+			@deployment = Deployment.find(params[:id])
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.

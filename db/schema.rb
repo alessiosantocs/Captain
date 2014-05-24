@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429215255) do
+ActiveRecord::Schema.define(version: 20140524102850) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -25,12 +25,27 @@ ActiveRecord::Schema.define(version: 20140429215255) do
     t.string   "consumer_secret"
   end
 
+  create_table "deployable_applications", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "deployments", force: true do |t|
     t.string   "branch"
     t.string   "environment"
     t.string   "revision"
     t.string   "repo"
-    t.integer  "user_id"
+    t.integer  "deployable_application_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pull_requests", force: true do |t|
+    t.integer  "pid"
+    t.string   "title"
+    t.integer  "deployable_application_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

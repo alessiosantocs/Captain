@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
 	devise  :database_authenticatable, :registerable,
 			:recoverable, :rememberable, :trackable, :validatable
 
+	# RepoManagement Authentication services
 	has_many :authentications
-	has_many :deployments
+	# He can deploy and register many applications
+	has_many :deployable_applications
 
 	# Signup with omniauth
 	def apply_omniauth(omniauth)

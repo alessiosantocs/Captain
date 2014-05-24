@@ -3,6 +3,9 @@ class Deployment < ActiveRecord::Base
 	# For now each user has many deployments and one app
 	belongs_to :user
 
+	# The application the user is deploying
+	belongs_to :deployable_application
+
 	def repo_name
 		match :repo_name
 	end
