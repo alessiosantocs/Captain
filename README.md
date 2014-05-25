@@ -1,5 +1,5 @@
 #DeploydApp
-A hassle-free deployment tracking system that will never forget what your last deploy contained.
+A hassle-free deployment tracking system that will never forget one.
 
 ##Development guidelines
 TODO...
