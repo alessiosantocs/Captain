@@ -6,7 +6,7 @@ class CreatePullRequests < ActiveRecord::Migration
       t.string 	:created_on
       t.string 	:merged_on
       
-      t.integer	:deployable_application_id
+      t.integer	:deployment_id
 
       t.timestamps
     end

@@ -5,9 +5,12 @@ class DeployableApplication < ActiveRecord::Base
 	
 	# Every deploy the user has made
 	has_many :deployments
+
 	# Every pull request associated to the user
 	has_many :pull_requests
 
+	# Properties validation
+	validates :name, uniqueness: true
 
 	def repo_name
 		match :repo_name

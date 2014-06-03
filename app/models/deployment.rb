@@ -6,6 +6,9 @@ class Deployment < ActiveRecord::Base
 	# The application the user is deploying
 	belongs_to :deployable_application
 
+	# Has many associated pull requests
+	has_many :pull_requests
+
 	def repo_name
 		match :repo_name
 	end

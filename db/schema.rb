@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140524102850) do
     t.string   "title"
     t.string   "created_on"
     t.string   "merged_on"
-    t.integer  "deployable_application_id"
+    t.integer  "deployment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
