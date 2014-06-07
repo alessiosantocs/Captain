@@ -1,4 +1,4 @@
-class DeployableApplicationsController < ApplicationController
+class DeployableApplicationsController < BaseController
 
 	before_action :authenticate_user!, :scm_associate_user!
 

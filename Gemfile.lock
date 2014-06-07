@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/alessiosantocs/bitbucket.git
-  revision: f12ecb5f6bbbe2b4bac56abc14b20f3199e324b0
+  revision: fbc1bf45fb6b94fc12d601fc092c4c8b7d414c27
+  branch: pull_requests_api
   specs:
     bitbucket_rest_api (0.1.5)
       faraday (~> 0.9.0)

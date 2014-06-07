@@ -1,4 +1,4 @@
-class DeploymentsController < ApplicationController
+class DeploymentsController < BaseController
 	# must be logged in
 	before_filter :authenticate_user!, :scm_associate_user!
 

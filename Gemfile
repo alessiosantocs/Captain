@@ -44,7 +44,7 @@ gem 'jbuilder', '~> 1.2'
 	# gem 'github_api'
 
 	# Accessing bitbucket's api
-	gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git'
+	gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git', branch: 'pull_requests_api'
 
 #=================================================================
 
