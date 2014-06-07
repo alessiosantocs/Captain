@@ -39,4 +39,26 @@ class User < ActiveRecord::Base
 								:consumer_secret => consumer_secret)
 	end
 
+
+	# Right now it is only bitbucket 
+	def scm_client
+
+		uid = authentications.first.uid
+		token = authentications.first.access_token
+		secret = authentications.first.token_secret
+		consumerkey = authentications.first.consumer_key
+		consumersecret = authentications.first.consumer_secret
+
+		bitbucket = BitBucket.new do |config|
+			config.oauth_token = token
+			config.oauth_secret = secret
+
+			config.client_id = consumerkey
+			config.client_secret = consumersecret
+		end
+
+		return bitbucket
+
+	end
+
 end

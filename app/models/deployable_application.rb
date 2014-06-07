@@ -6,11 +6,12 @@ class DeployableApplication < ActiveRecord::Base
 	# Every deploy the user has made
 	has_many :deployments
 
-	# Every pull request associated to the user
-	has_many :pull_requests
-
 	# Properties validation
-	validates :name, uniqueness: true
+	validates :name, uniqueness: true, presence: true
+	validates :branch, presence: true
+
+	# Filters
+	after_create :generate_token
 
 	def repo_name
 		match :repo_name
@@ -44,6 +45,12 @@ class DeployableApplication < ActiveRecord::Base
 			response = result[6] 				if value == :repo_extension
 
 			response
+		end
+
+		# Generate a unique public token for accessing the api of this app
+		def generate_token
+			self.public_token = SecureRandom.urlsafe_base64(nil, false)
+			self.save
 		end
 
 end

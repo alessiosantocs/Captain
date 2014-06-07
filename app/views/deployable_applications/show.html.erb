@@ -1,0 +1,9 @@
+<%= title @deployable_application.name %>
+
+<strong>Repo owner:</strong> <%= @deployable_application.repo_owner %> <br>
+<strong>Repo name:</strong> <%= @deployable_application.repo_name %> <br>
+<strong>Repo address:</strong> <%= @deployable_application.repo %> <br>
+
+<strong>Public token:</strong> <%= @deployable_application.public_token %> <br>
+
+<%= link_to "Go for a list of your deployments", deployable_application_deployments_url(@deployable_application) %>

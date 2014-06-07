@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20140524102850) do
   create_table "deployable_applications", force: true do |t|
     t.string   "name"
     t.string   "repo"
+    t.string   "branch"
+    t.string   "public_token"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

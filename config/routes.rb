@@ -11,6 +11,10 @@ Deploydapp::Application.routes.draw do
 	# Authentications controller routes
 	resources :authentications
 
+	# DeployableApplications controller routes
+	resources :deployable_applications do 
+		resources :deployments
+	end
 
 	# Here we go with the api
 	namespace :api, defaults: {format: 'json'} do

@@ -1,4 +1,6 @@
-<h1>Listing deployments</h1>
+<%= title do %>
+  Listing deployments <% if @deployable_application.present? %> For <%= @deployable_application.name %><% end %>
+<% end %>
 
 <table>
   <thead>

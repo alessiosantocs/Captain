@@ -1,6 +1,6 @@
 class DeploymentsController < ApplicationController
 	# must be logged in
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, :scm_associate_user!
 
 	before_action :set_deployment, only: [:show, :edit, :update, :destroy]
 
@@ -8,29 +8,23 @@ class DeploymentsController < ApplicationController
 	# GET /deployments
 	# GET /deployments.json
 	def index
-		@deployments = current_user.deployments.all
+		if deployable_application_id = params[:deployable_application_id]
+			@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
+			@deployments = @deployable_application.deployments.all
+		else
+			@deployments = Deployment.all
+		end
 	end
 
 	# GET /deployments/1
 	# GET /deployments/1.json
 	def show
+		@pull_requests = @deployment.pull_requests
 
-		uid = current_user.authentications.first.uid
-		token = current_user.authentications.first.access_token
-		secret = current_user.authentications.first.token_secret
-		consumerkey = current_user.authentications.first.consumer_key
-		consumersecret = current_user.authentications.first.consumer_secret
-		
-		bitbucket = BitBucket.new do |config|
-			config.oauth_token = token
-			config.oauth_secret = secret
-
-			config.client_id = consumerkey
-			config.client_secret = consumersecret
+		respond_to do |format|
+			format.html { redirect_to deployments_url }
+			format.json { render json: @deployment }
 		end
-
-		@pull_requests = bitbucket.pull_requests.list_repo(@deployment.repo_owner, @deployment.repo_name, {:state => 'merged'})
-		@issues = bitbucket.issues.list_repo(@deployment.repo_owner, @deployment.repo_name, {status: "resolved"})
 
 	end
 
@@ -38,10 +32,6 @@ class DeploymentsController < ApplicationController
 	# def new
 	# 	@deployment = Deployment.new
 	# end
-
-	# GET /deployments/1/edit
-	def edit
-	end
 
 	# POST /deployments
 	# POST /deployments.json
@@ -86,7 +76,12 @@ class DeploymentsController < ApplicationController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_deployment
-			@deployment = Deployment.find(params[:id])
+			if deployable_application_id = params[:deployable_application_id]
+				@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
+				@deployment = @deployable_application.deployments.find(params[:id])
+			else
+				@deployment = Deployment.find(params[:id])
+			end
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
