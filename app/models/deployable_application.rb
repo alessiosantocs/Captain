@@ -8,6 +8,7 @@ class DeployableApplication < ActiveRecord::Base
 
 	# Properties validation
 	validates :name, uniqueness: true, presence: true
+	validates :repo, presence: true
 	validates :branch, presence: true
 
 	# Filters

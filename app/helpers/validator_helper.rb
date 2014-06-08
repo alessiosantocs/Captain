@@ -19,13 +19,4 @@ module ValidatorHelper
 
 	end
 
-	# Check if the user has an scm association
-	def scm_associate_user!
-		if current_user.present?
-			if current_user.authentications.empty?
-				redirect_to authentications_url, :status => :bad_request
-			end
-		end
-	end
-
 end

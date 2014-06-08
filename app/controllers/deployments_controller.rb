@@ -8,7 +8,10 @@ class DeploymentsController < ApplicationController
 	# GET /deployments
 	# GET /deployments.json
 	def index
-		if deployable_application_id = params[:deployable_application_id]
+
+		app_id = params[:deployable_application_id] || current_user.deployable_applications.first.id
+
+		if deployable_application_id = app_id
 			@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
 			@deployments = @deployable_application.deployments.all
 		else

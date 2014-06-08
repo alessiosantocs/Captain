@@ -1,0 +1,25 @@
+<%= title "Sign up using your email" %>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
+
+	<%= devise_error_messages! %>
+
+	<%= f.input :email %>
+
+	<% if @user.password_required? # Probably when logging with social (twitter) %>
+
+		<%= f.input :password %>
+
+		<%= f.input :password_confirmation %>
+
+	<% end %>
+
+	<%= btn_container do %>
+		<%= f.button :button, 'Sign up'.html_safe, :class => "btn btn-primary " %>
+	<% end %>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+

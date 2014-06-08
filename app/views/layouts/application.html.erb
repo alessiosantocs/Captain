@@ -8,10 +8,24 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<!-- SIGNIN/SIGNOUT -->
+	<%= render :partial => "partials/navbar" %>
+	
+	<!-- THE CONTENT -->
+	<div class="container">
+		<!-- NOTICE/ALERT -->
+		<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
+		<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
 
-<%= yield %>
+		<%= yield %>
+	</div>
 
+<!-- 	<br><br>
+	<div class="container-fluid footer">
+		<div class="container">
+			Made with <span class="glyphicon glyphicon-heart"></span></b>
+		</div>
+	</div>
+ -->
 </body>
 </html>
