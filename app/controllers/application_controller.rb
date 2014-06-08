@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
-	include ApplicationHelper
-	include RedirectsHelper
-	include ValidatorHelper
+	include FindHelper
 
-	# Prevent CSRF attacks by raising an exception.
-	# For APIs, you may want to use :null_session instead.
-	protect_from_forgery with: :exception
-
-	before_filter :handle_automated_redirects
+	# DECLARE THE METHODS FINDER METHODS
+	FINDABLE_MODELS.each do |model|
+		define_method("find_" + model.to_s.tableize.singularize + "_by") do |colums, *args|
+			obj = model.send(("find_by_" + colums).to_sym, args)
+			raise ActiveRecord::RecordNotFound if obj.nil?
+		end
+	end
 
 end
