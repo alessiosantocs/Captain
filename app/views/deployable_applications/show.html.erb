@@ -1,5 +1,9 @@
-<%= title @deployable_application.name %>
-
+<span class="label label-danger">
+		Application not installed
+</span>
+<%= title do %>
+	<%= @deployable_application.name %>
+<% end %>
 <table class="table">
 	<thead>
 		<tr>

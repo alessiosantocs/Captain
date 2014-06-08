@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav id="app_main_navigation" class="navbar navbar-default" role="navigation">
 
 	<div class="container">
 		<div class="navbar-header">
@@ -34,7 +34,7 @@
 				<div class="navbar-right">
 					<p class="navbar-text">
 						<%= content_tag :b, current_user.profile_name %>, Not you?
-						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+						<%= link_to "Sign out", destroy_user_session_url, :method => :delete %>
 					</p>
 				</div>
 

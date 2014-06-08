@@ -92,4 +92,10 @@ module ApplicationHelper
 		end
 	# =======
 
+	# View helper to control which classes to give to the body
+		def body_classes
+			"#{params[:controller].parameterize.underscore} #{params[:action]}"
+		end
+	# =======
+
 end

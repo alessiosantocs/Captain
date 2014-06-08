@@ -1,4 +1,4 @@
-class PullRequestsController < ApplicationController
+class PullRequestsController < BaseController
 	# must be logged in
 	before_filter :scm_associate_user!
 
