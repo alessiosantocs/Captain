@@ -3,7 +3,9 @@ Deploydapp::Application.routes.draw do
 	devise_for :users
 
 	# The list of your deployments
-	resources :deployments
+	resources :deployments do
+		resources :pull_requests
+	end
 
 	# OAuth callback function
 	get '/auth/:provider/callback' => "authentications#create"

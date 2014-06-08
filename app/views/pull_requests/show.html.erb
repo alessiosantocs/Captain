@@ -1,0 +1,26 @@
+<%= title "##{@pull_request.pid} #{@pull_request.title}" %>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Deployed at</th>
+			<th>Environment</th>
+			<th>Branch</th>
+			<th>Created by</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td><%= @deployment.created_at %></td>
+			<td><%= @deployment.environment %></td>
+			<td><%= @deployment.branch %></td>
+			<td><%= link_to @pull_request.author[:display_name], @pull_request.author[:links][:self][:href] %></td>
+		</tr>
+	</tbody>
+
+</table>
+
+ADD HERE STUFF FROM BITBUCKET
+<%= @pull_request.additional_info %>
+<%= @pull_request.additional_info[:links][:diff][:href] %>

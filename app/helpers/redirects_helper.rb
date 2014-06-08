@@ -1,6 +1,6 @@
 module RedirectsHelper
 
-	KNOWN_CONTROLLERS = [:deployable_applications, :deployments, :authentications]
+	KNOWN_CONTROLLERS = [:deployable_applications, :deployments, :authentications, :pull_requests]
 	NEED_MORE_AUTHENTICATION = 'You will need to authenticate'
 
 	# Get and returns parameters from the environment object

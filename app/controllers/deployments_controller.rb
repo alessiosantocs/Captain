@@ -22,10 +22,8 @@ class DeploymentsController < ApplicationController
 	# GET /deployments/1
 	# GET /deployments/1.json
 	def show
-		@pull_requests = @deployment.pull_requests
-
 		respond_to do |format|
-			format.html { redirect_to deployments_url }
+			format.html {  }
 			format.json { render json: @deployment }
 		end
 
