@@ -28,6 +28,6 @@ Deploydapp::Application.routes.draw do
 	end
 
 
-	root :to => "deployments#index"
+	root :to => "deployable_applications#index"
 
 end
