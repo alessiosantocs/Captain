@@ -8,6 +8,7 @@ class DeployableApplication < ActiveRecord::Base
 
 	# Properties validation
 	validates :name, uniqueness: true, presence: true
+	validates :repo, presence: true
 	validates :branch, presence: true
 
 	# Filters
@@ -49,7 +50,10 @@ class DeployableApplication < ActiveRecord::Base
 
 		# Generate a unique public token for accessing the api of this app
 		def generate_token
-			self.public_token = SecureRandom.urlsafe_base64(nil, false)
+			begin
+				self.public_token = SecureRandom.hex(nil)
+			end while DeployableApplication.find_by_public_token(self.public_token).present?
+			
 			self.save
 		end
 

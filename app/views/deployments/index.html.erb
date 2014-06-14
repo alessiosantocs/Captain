@@ -1,35 +1,40 @@
 <%= title do %>
-  Listing deployments <% if @deployable_application.present? %> For <%= @deployable_application.name %><% end %>
+	Listing deployments <% if @deployable_application.present? %> For <%= @deployable_application.name %><% end %>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Deployed at</th>
-      <th>Environment</th>
-      <th>Branch</th>
-      <th>Revision</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Repo owner</th>
+			<th>Repo name</th>
+			<th>Repo address</th>
+			<th>Public token</th>
+		</tr>
+	</thead>
 
-  <tbody>
-    <% @deployments.each do |deployment| %>
-      <tr>
-        <td><%= deployment.created_at %></td>
-        <td><%= deployment.environment %></td>
-        <td><%= deployment.branch %></td>
-        <td><%= deployment.revision %></td>
-        <td><%= link_to 'Show', deployment %></td>
-        <td><%= link_to 'Edit', edit_deployment_path(deployment) %></td>
-        <td><%= link_to 'Destroy', deployment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tbody>
+		<tr>
+			<td><%= @deployable_application.repo_owner %></td>
+			<td><%= @deployable_application.repo_name %></td>
+			<td><%= @deployable_application.repo %></td>
+			<td><%= @deployable_application.public_token %></td>
+		</tr>
+	</tbody>
 </table>
 
-<br>
+<% if @deployments.any? %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deployment history</h3>
+		</div>
 
-<%= link_to 'New Deployment', new_deployment_path %>
+		<div class="list-group">
+			<% @deployments.each do |deployment| %>
+				<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>" class="list-group-item">
+					<span class="badge"><%= deployment.pull_requests.count %> pull requests</span>
+					<b>Deploy #<%= deployment.id %></b> at <%= "#{deployment.created_at}" %>
+				</a>
+			<% end %>
+		</div>
+	</div>
+<% end %>

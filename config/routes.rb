@@ -3,7 +3,9 @@ Deploydapp::Application.routes.draw do
 	devise_for :users
 
 	# The list of your deployments
-	resources :deployments
+	resources :deployments do
+		resources :pull_requests
+	end
 
 	# OAuth callback function
 	get '/auth/:provider/callback' => "authentications#create"
@@ -19,11 +21,13 @@ Deploydapp::Application.routes.draw do
 	# Here we go with the api
 	namespace :api, defaults: {format: 'json'} do
 		namespace :v1 do
-			resources :deployments
+			resources :deployments do
+				get 'test' => 'deployments#create'
+			end
 		end
 	end
 
 
-	root :to => "deployments#index"
+	root :to => "deployable_applications#index"
 
 end

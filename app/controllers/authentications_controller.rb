@@ -1,4 +1,4 @@
-class AuthenticationsController < ApplicationController
+class AuthenticationsController < BaseController
 	before_action :set_authentication, only: [:show, :edit, :update, :destroy]
 
 	# GET /authentications

@@ -1,37 +1,23 @@
-<h1>Listing authentications</h1>
+<%= title "Listing authentications" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Provider</th>
-      <th>Uid</th>
-      <th>Access token</th>
-      <th>Token secret</th>
-      <th>Consumer key</th>
-      <th>Consumer secret</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Provider</th>
+			<th></th>
+		</tr>
+	</thead>
 
-  <tbody>
-    <% @authentications.each do |authentication| %>
-      <tr>
-        <td><%= authentication.user_id %></td>
-        <td><%= authentication.provider %></td>
-        <td><%= authentication.uid %></td>
-        <td><%= authentication.access_token %></td>
-        <td><%= authentication.token_secret %></td>
-        <td><%= authentication.consumer_key %></td>
-        <td><%= authentication.consumer_secret %></td>
-        <td><%= link_to 'Show', authentication %></td>
-        <td><%= link_to 'Edit', edit_authentication_path(authentication) %></td>
-        <td><%= link_to 'Destroy', authentication, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tbody>
+		<% @authentications.each do |authentication| %>
+			<tr>
+				<td><%= authentication.provider.capitalize %></td>
+				<td>
+					<%= link_to 'Destroy', authentication, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
 
 <br>
