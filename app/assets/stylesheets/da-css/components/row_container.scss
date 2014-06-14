@@ -1,0 +1,45 @@
+/*Container with image*/
+.container{	
+	&.da-image-right{
+		position: relative;
+		
+		img{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	&.da-image-left{
+		position: relative;
+		
+		img{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+}
+
+/*Row containers*/
+.da-row-container{
+	&.da-row-main{
+		padding: 250px 0px;
+		background-image: url(../../images/resources/top-part.png), url(../../images/resources/bottom-part.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: top center, bottom center;
+
+	}
+	&.da-row-default{
+		/*background: #eee;*/
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+	}
+	&.da-row-inverse{
+		background-color: #1d6fb7;
+		color: #fff;
+	}
+}
+
