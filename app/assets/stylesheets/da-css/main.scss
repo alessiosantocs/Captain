@@ -1,11 +1,12 @@
 @import "components/buttons.css";
 @import "components/row_container.css";
+@import "components/forms.css";
 
 /*Custom navbar*/
 .da-navbar{
 	border-bottom: 1px solid #eee;
 	margin-bottom: 0;
-	
+
 	.navbar-nav{
 		>li{
 			>a{

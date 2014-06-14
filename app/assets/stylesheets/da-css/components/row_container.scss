@@ -37,9 +37,16 @@
 		border-top: 1px solid #ccc;
 		border-bottom: 1px solid #ccc;
 	}
+	&.da-row-cta{
+		background: #eee;
+	}
 	&.da-row-inverse{
 		background-color: #1d6fb7;
 		color: #fff;
+	}
+
+	&.da-row-size1{
+		padding: 50px 0px;
 	}
 }
 

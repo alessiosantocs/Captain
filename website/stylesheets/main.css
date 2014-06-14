@@ -1,5 +1,6 @@
 @import url(components/buttons.css);
 @import url(components/row_container.css);
+@import url(components/forms.css);
 /*Custom navbar*/
 .da-navbar {
   border-bottom: 1px solid #eee;
