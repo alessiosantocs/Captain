@@ -8,7 +8,10 @@ class DeploymentsController < BaseController
 	# GET /deployments
 	# GET /deployments.json
 	def index
-		if deployable_application_id = params[:deployable_application_id]
+
+		app_id = params[:deployable_application_id] || current_user.deployable_applications.first.id
+
+		if deployable_application_id = app_id
 			@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
 			@deployments = @deployable_application.deployments.all
 		else
@@ -19,10 +22,8 @@ class DeploymentsController < BaseController
 	# GET /deployments/1
 	# GET /deployments/1.json
 	def show
-		@pull_requests = @deployment.pull_requests
-
 		respond_to do |format|
-			format.html { redirect_to deployments_url }
+			format.html {  }
 			format.json { render json: @deployment }
 		end
 
