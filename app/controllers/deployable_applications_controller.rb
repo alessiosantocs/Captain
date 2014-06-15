@@ -1,9 +1,6 @@
 class DeployableApplicationsController < BaseController
 
-	before_action :authenticate_user!, :scm_associate_user!
-
-	before_action :force_single_application_management, only: [:index, :edit, :new, :show]
-
+	before_action :scm_associate_user!
 	before_action :set_deployable_application, only: [:show, :edit, :update, :destroy]
 
 	# GET /deployable_applications
@@ -52,16 +49,5 @@ class DeployableApplicationsController < BaseController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployable_application_params
 			params.require(:deployable_application).permit(:repo, :branch, :name)
-		end
-
-		def force_single_application_management
-			# Does the user have any application
-			if current_user.deployable_applications.any?
-				# if yes redirect to the first application of the user
-				redirect_to deployable_application_url current_user.deployable_applications.first if params[:action] != 'show'
-			else
-				# if no make him create a new one
-				redirect_to new_deployable_application_url if params[:action] != 'new'
-			end
 		end
 end

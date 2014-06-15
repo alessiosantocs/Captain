@@ -1,0 +1,52 @@
+<nav id="app_main_navigation" class="navbar da-navbar" role="navigation">
+
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "DeploydApp", root_url, :class => "navbar-brand" %>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+
+			<% if user_signed_in? %>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<%= link_to authentications_url do %>
+							<span class="glyphicon glyphicon-user"></span>
+							Your account
+						<% end %>
+					</li>
+					<li>
+						<%= link_to deployable_applications_url do %>
+							<span class="glyphicon glyphicon-user"></span>
+							Your applications
+						<% end %>
+					</li>
+				</ul>
+
+				<div class="navbar-right">
+					<p class="navbar-text">
+						<%= content_tag :b, current_user.profile_name %>, Not you?
+						<%= link_to "Sign out", destroy_user_session_url, :method => :delete %>
+					</p>
+				</div>
+
+			<% else %>
+
+				<%= link_to "Get on board", authentications_url, :class => "btn btn-outline navbar-btn navbar-right" %>
+				
+			<% end %>
+
+		</div><!-- /.navbar-collapse -->
+
+
+	</div>
+
+</nav>

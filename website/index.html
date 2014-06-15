@@ -2,9 +2,12 @@
 <head>
 	<title>Deployd website</title>
 	<script data-main="js/main" src="js/require.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 </head>
 <body>
+
+	<!-- THE SITE HEADER -->
 	<header class="navbar navbar-static-top da-navbar" id="top" role="banner">
 		<div class="container">
 			<div class="navbar-header">
@@ -29,18 +32,20 @@
 		</div>
 	</header>
 
-	<section class="da-row-container text-center">
+	<!-- THE MAIN BLOCK - WITH CTA -->
+	<section class="da-row-container da-row-inverse text-center da-row-main">
 		<div class="container">
-			<div class="hero-unit da-hero-main">
-				<h1>Keep track of all your deployments <br>without any efforts</h1>
+			<div class="hero-unit">
+				<h1>Keep track of all your deployments <br>without any effort</h1>
 				<div class="btn-group">
-					<a href="#" class="btn btn-lg btn-outline">Discover how</a>
+					<a href="#" class="btn btn-lg btn-outline-inverse">Discover how</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="da-row-container da-row-inverse text-left">
+	<!-- THE PROBLEM BLOCK -->
+	<section class="da-row-container text-left">
 		<div class="container da-image-right">
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
@@ -54,12 +59,13 @@
 					</div>
 				</div>
 
-				<img src="http://placehold.it/550x400">
+				<img src="images/resources/phase-01.png" width="500" style="margin-bottom: 90px;">
 			</div>
 		</div>
 	</section>
 
-	<section class="da-row-container text-left">
+	<!-- THE SOLUTION BLOCK -->
+	<section class="da-row-container text-left da-row-default">
 		<div class="container da-image-left">
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
@@ -73,12 +79,13 @@
 					</div>
 				</div>
 
-				<img src="http://placehold.it/550x400">
+				<img src="images/resources/phase-02.png" width="500" style="margin-bottom: 90px;">
 			</div>
 		</div>
 	</section>
 
-	<section class="da-row-container text-center da-row-default">
+	<!-- SET OF FEATURES -->
+	<section class="da-row-container text-center">
 		<div class="container">
 			<div class="hero-unit da-hero-secondary">
 				<h2 class="bs-docs-featurette-title">Designed for everyone, everywhere.</h2>
@@ -104,14 +111,24 @@
 					</div>
 				</div>
 
-				<hr class="half-rule">
-
-				<p class="lead">Bootstrap is open source. It's hosted, developed, and maintained on GitHub.</p>
-				<a href="https://github.com/twbs/bootstrap" class="btn btn-outline btn-lg">View the GitHub project</a>
 			</div>
 		</div>
 	</section>
 
+	<section class="da-row-container da-row-cta da-row-size1">
+		<div class="container">
+			<div class="row">
+				<form>
+					<div class="col-sm-9">
+						<input type="email" autocomplete="off" name="email" placeholder="Enter your email here" class="da-flat-text">
+					</div>
+					<div class="col-sm-3">
+						<button class="btn btn-primary btn-lg" style="margin: 20px 0px;">Send me updates</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 <!-- 	<footer class="da-footer">
 		<div class="container">
 			<p>Made with love by </p>

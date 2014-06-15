@@ -1,0 +1,78 @@
+@import "components/buttons.css";
+@import "components/row_container.css";
+@import "components/forms.css";
+
+/*Custom navbar*/
+.da-navbar{
+	border-bottom: 1px solid #eee;
+	margin-bottom: 0;
+
+	.navbar-nav{
+		>li{
+			>a{
+				color: #999999;
+
+				&:hover{
+					color: #4D4D4D;
+					background: #fafafa;
+				}
+			}
+
+			&.active{
+				>a{
+					color: #4D4D4D;
+					background: #fafafa;
+				}
+			}
+		}
+	}
+
+	.navbar-brand{
+		color: #999999;
+
+		&:hover{
+			color: #4D4D4D;
+			background: #fafafa;
+		}
+	}
+}
+
+/*footer*/
+.da-footer{
+	border-top: 1px solid #ccc;
+}
+
+/*Main hero unit*/
+.da-hero-main{
+	margin-top: 200px;
+	margin-bottom: 200px;
+
+	h1{
+		margin-bottom: 50px;
+	}
+
+	p{
+		font-size: 22px;
+	}
+
+}
+
+/*Main hero unit*/
+.da-hero-secondary{
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+	h1{
+		margin-bottom: 50px;
+	}
+
+	p{
+		font-size: 26px;
+	}
+}
+
+
+.half-rule {
+width: 100px;
+margin: 40px auto;
+}
