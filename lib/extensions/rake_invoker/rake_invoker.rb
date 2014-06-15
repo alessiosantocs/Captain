@@ -1,6 +1,6 @@
 class RakeInvoker
 	def self.run(args)
-		rake_name 	= args.keys..to_s
+		rake_name 	= args.keys.to_s
 		task_name	= args.values.first.to_s
 
 		params		= args.select{|key, value| key.to_s != rake_name}

@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer'# , platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -51,7 +51,7 @@ gem 'simple_form'
 	# gem 'github_api'
 
 	# Accessing bitbucket's api
-	gem 'bitbucket_rest_api', :path => '~/projects/bitbucket' # , :git => 'git://github.com/alessiosantocs/bitbucket.git', branch: 'pull_requests_api'
+	gem 'bitbucket_rest_api', :git => 'git://github.com/alessiosantocs/bitbucket.git', branch: 'pull_requests_api'
 
 #=================================================================
 
