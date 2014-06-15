@@ -20,6 +20,6 @@ class Api::V1::BaseController < ApplicationController
 		end
 
 		def check_token
-			raise Net::HTTPUnauthorized
+			raise Net::HTTPUnauthorized if params[:public_token]
 		end
 end
