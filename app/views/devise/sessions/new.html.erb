@@ -1,0 +1,19 @@
+<%= title "Sign in with your email" %>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
+
+	<%= f.input :email %>
+
+	<%= f.input :password %>
+
+	<% if devise_mapping.rememberable? -%>
+		<%= f.input :remember_me, :as => :boolean %>
+	<% end -%>
+
+	<%= btn_container do %>
+		<%= f.button :button, 'Sign in'.html_safe, :class => "btn btn-primary" %>
+	<% end %>
+
+<% end %>
+
+<%= render "devise/shared/links" %>

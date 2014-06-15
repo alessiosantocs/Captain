@@ -1,9 +1,42 @@
-<%= title @deployable_application.name %>
+<span class="label label-danger">
+		Application not installed
+</span>
+<%= title do %>
+	<%= @deployable_application.name %>
+<% end %>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Repo owner</th>
+			<th>Repo name</th>
+			<th>Repo address</th>
+			<th>Public token</th>
+		</tr>
+	</thead>
 
-<strong>Repo owner:</strong> <%= @deployable_application.repo_owner %> <br>
-<strong>Repo name:</strong> <%= @deployable_application.repo_name %> <br>
-<strong>Repo address:</strong> <%= @deployable_application.repo %> <br>
+	<tbody>
+		<tr>
+			<td><%= @deployable_application.repo_owner %></td>
+			<td><%= @deployable_application.repo_name %></td>
+			<td><%= @deployable_application.repo %></td>
+			<td><%= @deployable_application.public_token %></td>
+		</tr>
+	</tbody>
+</table>
 
-<strong>Public token:</strong> <%= @deployable_application.public_token %> <br>
+<% if @deployable_application.deployments.any? and latest_deployment = @deployable_application.deployments.last %>
+	<!-- The latest deploy you made -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Last deployment</h3>
+		</div>
 
-<%= link_to "Go for a list of your deployments", deployable_application_deployments_url(@deployable_application) %>
+		<div class="list-group">
+			<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>" class="list-group-item">
+				<span class="badge"><%= latest_deployment.pull_requests.count %> pull requests</span>
+				<b>Deploy #<%= latest_deployment.id %></b> at <%= "#{latest_deployment.created_at}" %>
+			</a>
+		</div>
+	</div>
+	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
+<% end %>

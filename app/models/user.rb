@@ -61,4 +61,15 @@ class User < ActiveRecord::Base
 
 	end
 
+	# Rewrite the method inherited from devise
+	def password_required?
+		(authentications.empty? || !password.blank?) && super
+	end
+
+	# A simple method to get the profile name
+	def profile_name
+		email.split("@")[0] # first_name || last_name || 
+	end
+
+
 end

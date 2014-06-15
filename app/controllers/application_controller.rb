@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+<<<<<<< HEAD
 
 	def set_resource
 		# search the resource by id
@@ -25,4 +26,6 @@ class ApplicationController < ActionController::Base
 			instance_variable_set("@#{resource_name}".to_sym, @fetched_resource)
 		end
 	end
+=======
+>>>>>>> master
 end

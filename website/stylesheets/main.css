@@ -1,0 +1,46 @@
+@import url(components/buttons.css);
+@import url(components/row_container.css);
+@import url(components/forms.css);
+/*Custom navbar*/
+.da-navbar {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0; }
+  .da-navbar .navbar-nav > li > a {
+    color: #999999; }
+    .da-navbar .navbar-nav > li > a:hover {
+      color: #4D4D4D;
+      background: #fafafa; }
+  .da-navbar .navbar-nav > li.active > a {
+    color: #4D4D4D;
+    background: #fafafa; }
+  .da-navbar .navbar-brand {
+    color: #999999; }
+    .da-navbar .navbar-brand:hover {
+      color: #4D4D4D;
+      background: #fafafa; }
+
+/*footer*/
+.da-footer {
+  border-top: 1px solid #ccc; }
+
+/*Main hero unit*/
+.da-hero-main {
+  margin-top: 200px;
+  margin-bottom: 200px; }
+  .da-hero-main h1 {
+    margin-bottom: 50px; }
+  .da-hero-main p {
+    font-size: 22px; }
+
+/*Main hero unit*/
+.da-hero-secondary {
+  margin-top: 100px;
+  margin-bottom: 100px; }
+  .da-hero-secondary h1 {
+    margin-bottom: 50px; }
+  .da-hero-secondary p {
+    font-size: 26px; }
+
+.half-rule {
+  width: 100px;
+  margin: 40px auto; }

@@ -1,25 +1,40 @@
 <%= title "Deployment #{@deployment.created_at}" %>
 
-<p id="notice"><%= notice %></p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Deployed at</th>
+			<th>Environment</th>
+			<th>Branch</th>
+			<th>Revision</th>
+		</tr>
+	</thead>
 
-<p>
-  <strong>Version:</strong>
+	<tbody>
+		<tr>
+			<td><%= @deployment.created_at %></td>
+			<td><%= @deployment.environment %></td>
+			<td><%= @deployment.branch %></td>
+			<td><%= @deployment.revision %></td>
+		</tr>
+	</tbody>
+</table>
 
-</p>
+<% if @deployment.pull_requests.any? %>
+	<!-- List of pull requests -->
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><h3 class="panel-title">Deployed pull requests</h3></div>
 
-Great pull requests:<br>
-<ul>
-<% @pull_requests[2].each do |pull_request| %>
-	<li><%= pull_request.title %> - <%= pull_request['status'] %></li>
+		<div class="list-group">
+			<% @deployment.pull_requests.each do |pull_request| %>
+				<a href="<%= deployment_pull_request_url @deployment, pull_request %>" class="list-group-item">
+					<span class="badge"><%= pull_request.merged_on %></span>
+					#<%= pull_request.pid %> <%= pull_request.title %>
+				</a>
+			<% end %>
+		</div>
+	</div>
 <% end %>
-</ul>
 
-Great issues:<br>
-<ul>
-<% @issues.each do |issue| %>
-	<li><%= issue.title %> - <%= issue['status'] %></li>
-<% end %>
-</ul>
-
-<%= link_to 'Edit', edit_deployment_path(@deployment) %> |
 <%= link_to 'Back', deployments_path %>
