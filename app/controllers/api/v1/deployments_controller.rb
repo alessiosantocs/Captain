@@ -1,13 +1,17 @@
 class Api::V1::DeploymentsController < Api::V1::BaseController
 
-	before_action :set_deployment, only: [:show, :edit, :update, :destroy]
+	# before_action :set_deployment, only: [:show, :edit, :update, :destroy]
 
 	# POST /deployments
 	# POST /deployments.json
 	def create
 		@app 				= find_deployable_application_by("public_token", params[:deployment][:deployable_application_id])
 
+		# CREATE NEW RAKE DEPLOY
 		@deployment 		= Deployment.new(deployment_params)
+
+		RakeInvoker.run(pull_requests: :fetch_for_app, public_token: @app.public_token, app_id: @app.id, deployment_id: @deployment.id)
+
 		# @deployment.user 	= User.first
 
 		if @deployment.save
@@ -19,9 +23,9 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 
 	private
 		# Use callbacks to share common setup or constraints between actions.
-		def set_deployment
-			@deployment = Deployment.find(params[:id])
-		end
+		# def set_deployment
+		#	@deployment = Deployment.find(params[:id])
+		# end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployment_params
