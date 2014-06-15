@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	before_filter :set_element, only: [:show, :update, :deleter, :edit]
+	before_filter :set_resource, only: [:show, :update, :deleter, :edit]
 
 	include FindHelper
 
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
 	def set_resource
 		# search the resource by id
-		resource_name		= params[:controller].singularize
+		resource_name			= params[:controller].singularize
 
 		if resource_name.present?
 			@fetched_resource 	= self.send("find_#{resource_name}_by", "id", params[:id])
