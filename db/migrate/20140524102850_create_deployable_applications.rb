@@ -5,6 +5,7 @@ class CreateDeployableApplications < ActiveRecord::Migration
       t.string :repo
       t.string :branch
       t.string :public_token
+      t.boolean :installed, :default => false
       t.integer :user_id
 
       t.timestamps

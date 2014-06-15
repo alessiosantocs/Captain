@@ -24,6 +24,10 @@ Deploydapp::Application.routes.draw do
 			resources :deployments do
 				get 'test' => 'deployments#create'
 			end
+
+			resources :deployable_applications do
+				patch 'activate' => 'deployable_applications#activate'
+			end
 		end
 	end
 
