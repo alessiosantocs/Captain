@@ -5,14 +5,14 @@ class Api::V1::DeployableApplicationsController < Api::V1::BaseController
 	# PUT /deployable_applications/token/activate
 	def activate
 
-		@deployable_application = DeployableApplication.find_by_public_token(params[:id])
+		@deployable_application = DeployableApplication.find_by_public_token(params[:deployable_application_id])
 
 		_validate_presence_of_record @deployable_application
 
 		@deployable_application.installed = true
 
 		if @deployable_application.save
-			render :json => "Done"
+			render :json => "Done", status: :ok
 		else
 			render :json => "Errors"
 		end

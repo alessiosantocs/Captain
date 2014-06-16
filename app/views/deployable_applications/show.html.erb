@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
-<% elsif @deployable_application.is_installed?  %>
+<% elsif @deployable_application.installed  %>
 	<div class="alert alert-warning">
 		You have no deployments yet. Go <strong><i>cap production deploy</i></strong><%=  %> your application...
 	</div>
@@ -42,6 +42,6 @@
 
 
 <!-- Display a modal if the application was not installed -->
-<% unless @deployable_application.is_installed? %>
+<% unless @deployable_application.installed %>
 	<%= render :partial => "activation_modal" %>
 <% end %>

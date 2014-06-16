@@ -1,4 +1,5 @@
 class Api::V1::BaseController < ApplicationController
+	include ExceptionsHelper
 	include ValidatorHelper
 
 	# Prevent CSRF attacks by raising an exception.
@@ -10,7 +11,7 @@ class Api::V1::BaseController < ApplicationController
 	respond_to :json
 
 	rescue_from ActiveRecord::RecordNotFound, with: :not_found
-	rescue_from Net::HTTPUnauthorized, with: :unauthorized
+	rescue_from HTTPUnauthorized, with: :unauthorized
 
 	private
 		def not_found
@@ -22,6 +23,6 @@ class Api::V1::BaseController < ApplicationController
 		end
 
 		def check_token
-			raise Net::HTTPUnauthorized if params[:public_token]
+			raise HTTPUnauthorized if params[:public_token]
 		end
 end
