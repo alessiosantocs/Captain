@@ -60,7 +60,7 @@ class AuthenticationsController < BaseController
 												 :token_secret => token_secret,
 												 :consumer_key => consumer_key,
 												 :consumer_secret => consumer_secret
-			redirect_to authentications_url, :notice => "Successfully added authentication."
+			redirect_to deployable_applications_url, :notice => "Successfully added authentication."
 
 		else
 

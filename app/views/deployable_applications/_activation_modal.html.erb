@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div class="modal fade" id="activationModal" tabindex="-1" role="dialog" aria-labelledby="activationModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="activationModalLabel">Activate your application</h4>
+			</div>
+			<div class="modal-body">
+				<% if flash[:application_created] %>
+					<div class="alert alert-success">
+						Your application was successfully created
+					</div>
+				<% end %>
+				<p>
+					Here's what's left for you to get up and running:
+				</p>
+
+				<ul>
+					<li>
+						<b>Install the gem:</b>
+						<pre>gem "deployd" # in your gemfile, then bundle install</pre> 
+					</li>
+					<li>
+						<b>Run the installer:</b>
+						<pre>rake deployd:install public_token="<%= @deployable_application.public_token %>"</pre>
+					</li>
+				</ul>
+
+				<p>
+					When you're done with the directions click the button below
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary btn-action-refresh">
+					Detect changes
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("#activationModal").modal("show");
+</script>

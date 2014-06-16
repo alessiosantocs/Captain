@@ -22,6 +22,10 @@ class DeployableApplication < ActiveRecord::Base
 		match :repo_owner
 	end
 
+	def is_installed?
+		true
+	end
+
 	private
 		def match(value)
 			response = nil

@@ -1,9 +1,4 @@
-<span class="label label-danger">
-		Application not installed
-</span>
-<%= title do %>
-	<%= @deployable_application.name %>
-<% end %>
+<%= title @deployable_application.name %>
 <table class="table">
 	<thead>
 		<tr>
@@ -39,4 +34,14 @@
 		</div>
 	</div>
 	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
+<% elsif @deployable_application.is_installed?  %>
+	<div class="alert alert-warning">
+		You have no deployments yet. Go <strong><i>cap production deploy</i></strong><%=  %> your application...
+	</div>
+<% end %>
+
+
+<!-- Display a modal if the application was not installed -->
+<% unless @deployable_application.is_installed? %>
+	<%= render :partial => "activation_modal" %>
 <% end %>
