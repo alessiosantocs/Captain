@@ -104,6 +104,7 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    multiple_routes (0.0.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x64-mingw32)
@@ -216,6 +217,7 @@ DEPENDENCIES
   devise (~> 3.0.4)
   jbuilder (~> 1.2)
   jquery-rails
+  multiple_routes
   omniauth-bitbucket
   omniauth-github
   pg
