@@ -7,7 +7,7 @@ namespace :api, defaults: {format: 'json'} do
 		end
 
 		resources :deployable_applications do
-			patch 'activate' => 'deployable_applications#activate'
+			put 'activate' => 'deployable_applications#activate'
 		end
 	end
 end
