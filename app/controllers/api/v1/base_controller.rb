@@ -12,11 +12,11 @@ class Api::V1::BaseController < ApplicationController
 
 	private
 		def not_found
-			render json: {error: "resouce not found"}, status: 404
+			render json: {error: "resouce not found"}, status: :not_found
 		end
 
 		def unauthorized
-			render json: {error: "unauthorized"}, status: 401
+			render json: {error: "unauthorized"}, status: :unauthorized
 		end
 
 		def check_token

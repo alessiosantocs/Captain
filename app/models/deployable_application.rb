@@ -22,6 +22,10 @@ class DeployableApplication < ActiveRecord::Base
 		match :repo_owner
 	end
 
+	def environment
+		'production'
+	end
+
 	private
 		def match(value)
 			response = nil
