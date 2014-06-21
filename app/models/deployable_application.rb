@@ -25,8 +25,8 @@ class DeployableApplication < ActiveRecord::Base
 		match :repo_owner
 	end
 
-	def is_installed?
-		true
+	def environment
+		'production'
 	end
 
 	private

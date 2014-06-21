@@ -7,6 +7,10 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 	def create
 		@app 				= find_deployable_application_by("public_token", params[:deployment][:deployable_application_id])
 
+		# Chech if the branch and the environment are correct, otherwise kill the request with raise Net::HTTPUnauthorized.new
+		validate_branch_and_environment(@app, params)
+
+
 		# CREATE NEW RAKE DEPLOY
 		@deployment 		= Deployment.new(deployment_params)
 
@@ -30,6 +34,12 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployment_params
 			params.require(:deployment).permit(:branch, :environment, :revision, :repo)
+		end
+
+		def validate_branch_and_environment(app, params)
+			unless @app.branch == params[:deployment][:branch] && @app.environment == params[:deployment][:environment]
+				raise Net::HTTPUnauthorized
+			end
 		end
 
 end
