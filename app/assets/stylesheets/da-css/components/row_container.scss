@@ -26,16 +26,20 @@
 .da-row-container{
 	&.da-row-main{
 		padding: 250px 0px;
-		background-image: url(../../images/resources/top-part.png), url(../../images/resources/bottom-part.png);
+		background-image: url(../images/resources/top-part.png), url(../images/resources/bottom-part.png);
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: top center, bottom center;
+
+		.btn-group{
+			margin-top: 30px;
+		}
 
 	}
 	&.da-row-default{
 		/*background: #eee;*/
 		border-top: 1px solid #ccc;
-		border-bottom: 1px solid #ccc;
+		// border-bottom: 1px solid #ccc;
 	}
 	&.da-row-cta{
 		background: #eee;
@@ -49,4 +53,51 @@
 		padding: 50px 0px;
 	}
 }
+
+
+
+
+
+
+
+// Colored sections
+section{
+	padding: 50px 0;
+	position: relative;
+
+	&.section-primary{
+		background: #1d6fb7; 
+		color: white;
+	}
+
+	// &.section-info{
+	// 	background: $section_info;
+	// 	color: $violet;
+	// }
+
+	// &.section-success{
+	// 	background: $section_success;
+	// 	color: $violet;
+	// }
+
+	// &.section-danger{
+	// 	background: $section_danger;
+	// 	color: $violet;
+	// }
+
+	// &.section-dream{
+	// 	background: $section_dream;
+	// 	color: $weak_pink;
+	// }
+
+	$section_max_size: 10;
+	$section_atom: 30px;
+	// Section sizes
+	@for $size from 1 through $section_max_size{
+		&.section-size-#{$size}{
+			padding: $size * $section_atom 0px;
+		}		
+	}
+}
+
 

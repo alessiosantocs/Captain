@@ -49,17 +49,29 @@ module ApplicationHelper
 	# =======
 
 	# A simple function to generate an html title in the page
-		def title(value="")
+		def title(value="", options={})
 			if block_given?
-				return content_tag :div, :class => "page-header" do
-				 	content_tag :h1 do
-				 		yield
-				 	end
+				return content_tag :div, :class => (options[:wrapper_class] || "page-header") do
+					content_tag :h1 do
+						yield
+					end
 				end
 			else
-				return content_tag :div, :class => "page-header" do
+				return content_tag :div, :class => (options[:wrapper_class] || "page-header") do
 				 	content_tag(:h1, value)
 				end
+			end
+		end
+	# =======
+
+	# A simple function to generate an html subtitle that should be positioned under the title
+		def sub_title(value="", options={})
+			if block_given?
+				content_tag :p, :class => "lead" do
+					yield
+				end
+			else
+				content_tag(:p, value, :class => "lead")
 			end
 		end
 	# =======

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Multiple routes
+gem 'multiple_routes'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 

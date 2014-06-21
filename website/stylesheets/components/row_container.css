@@ -15,14 +15,15 @@
 /*Row containers*/
 .da-row-container.da-row-main {
   padding: 250px 0px;
-  background-image: url(../../images/resources/top-part.png), url(../../images/resources/bottom-part.png);
+  background-image: url(../images/resources/top-part.png), url(../images/resources/bottom-part.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center, bottom center; }
+  .da-row-container.da-row-main .btn-group {
+    margin-top: 30px; }
 .da-row-container.da-row-default {
   /*background: #eee;*/
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; }
+  border-top: 1px solid #ccc; }
 .da-row-container.da-row-cta {
   background: #eee; }
 .da-row-container.da-row-inverse {
@@ -30,3 +31,30 @@
   color: #fff; }
 .da-row-container.da-row-size1 {
   padding: 50px 0px; }
+
+section {
+  padding: 50px 0;
+  position: relative; }
+  section.section-primary {
+    background: #1d6fb7;
+    color: white; }
+  section.section-size-1 {
+    padding: 30px 0px; }
+  section.section-size-2 {
+    padding: 60px 0px; }
+  section.section-size-3 {
+    padding: 90px 0px; }
+  section.section-size-4 {
+    padding: 120px 0px; }
+  section.section-size-5 {
+    padding: 150px 0px; }
+  section.section-size-6 {
+    padding: 180px 0px; }
+  section.section-size-7 {
+    padding: 210px 0px; }
+  section.section-size-8 {
+    padding: 240px 0px; }
+  section.section-size-9 {
+    padding: 270px 0px; }
+  section.section-size-10 {
+    padding: 300px 0px; }

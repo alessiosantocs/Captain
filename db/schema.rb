@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140524102850) do
     t.string   "repo"
     t.string   "branch"
     t.string   "public_token"
+    t.boolean  "installed",    default: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
