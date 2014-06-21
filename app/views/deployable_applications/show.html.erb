@@ -1,4 +1,7 @@
-<%= title @deployable_application.name %>
+<% content_for :title do %>
+	<%= title @deployable_application.name, :wrapper_class => "" %>
+	<%= sub_title "Application's detail" %>
+<% end %>
 <table class="table">
 	<thead>
 		<tr>

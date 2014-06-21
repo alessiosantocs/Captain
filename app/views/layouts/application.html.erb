@@ -10,7 +10,32 @@
 
 	<!-- SIGNIN/SIGNOUT -->
 	<%= render :partial => "partials/navbar" %>
-	
+
+	<!-- Title of the page section -->
+	<% if (yield :title).present? %>
+		<section class="section-primary section-size-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<%= yield :title %>
+					</div>
+					<!-- <div class="col-sm-5 text-right">
+						<br><br>
+						<div class="btn-group">
+							<a class="btn btn-white">
+								Edit information
+							</a>
+							<a class="btn btn-danger">
+								Delete application
+							</a>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</section>
+	<% end %>
+
+	<br>
 	<!-- THE CONTENT -->
 	<div class="container">
 		<!-- NOTICE/ALERT -->

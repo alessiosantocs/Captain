@@ -1,6 +1,9 @@
-@import "components/buttons.css";
-@import "components/row_container.css";
-@import "components/forms.css";
+@import "variables";
+
+@import "components/buttons";
+@import "components/row_container";
+@import "components/forms";
+@import "components/headings";
 
 /*Custom navbar*/
 .da-navbar{
@@ -42,6 +45,18 @@
 	border-top: 1px solid #ccc;
 }
 
+p{
+	&.text{
+		font-size: 19px;
+	}
+
+	&.lead{
+		font-size: 26px;
+	}
+
+}
+
+
 /*Main hero unit*/
 .da-hero-main{
 	margin-top: 200px;
@@ -50,11 +65,6 @@
 	h1{
 		margin-bottom: 50px;
 	}
-
-	p{
-		font-size: 22px;
-	}
-
 }
 
 /*Main hero unit*/
@@ -66,11 +76,11 @@
 		margin-bottom: 50px;
 	}
 
-	p{
-		font-size: 26px;
-	}
 }
 
+.img-responsive{
+	margin: auto;
+}
 
 .half-rule {
 width: 100px;
