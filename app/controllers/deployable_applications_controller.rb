@@ -1,5 +1,5 @@
 class DeployableApplicationsController < BaseController
-
+	
 	before_action :scm_associate_user!
 	before_action :set_deployable_application, only: [:show, :edit, :update, :destroy]
 

@@ -1,4 +1,5 @@
 class DeployableApplication < ActiveRecord::Base
+	include DeployableApplicationsHelper
 
 	# It belongs to one and only one User
 	belongs_to :user
@@ -10,6 +11,8 @@ class DeployableApplication < ActiveRecord::Base
 	validates :name, uniqueness: true, presence: true
 	validates :repo, presence: true
 	validates :branch, presence: true
+
+	validate :must_be_friends
 
 	# Filters
 	after_create :generate_token
@@ -61,4 +64,11 @@ class DeployableApplication < ActiveRecord::Base
 			self.save
 		end
 
+		def must_be_friends
+			repos = possible_repos(user).map do |rp|
+				rp[1]
+			end
+			
+			errors.add(:base, "Use only your own repositories") unless repos.index(repo).present?
+		end
 end
