@@ -1,21 +1,9 @@
 <%= title "Create an account for Deployd" %>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
-<%= display_errors!(resource) %>
-	<% if resource.errors.any? %>
-		<div class="alert alert-danger">
-			<p class="text">
-				<%= pluralize(resource.errors.count, "error") %> prohibited this deployable_application from being saved:
-			</p>
-
-			<ul>
-			<% resource.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-			</ul>
-		</div>
-	<% end %>
-
+	
+	<%= display_errors!(resource) %>
+	
 	<%= f.input :email, :label => false, :placeholder => "Your email address" %>
 
 	<% if @user.password_required? # Probably when logging with social (twitter) %>

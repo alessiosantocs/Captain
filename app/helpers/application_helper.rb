@@ -115,15 +115,21 @@ module ApplicationHelper
 		response = ""
 		if resource.errors.any?
 			response = content_tag :div, :class => "alert alert-danger" do 
-				content_tag :p, :class => "text" do
-					"#{pluralize(resource.errors.count, 'error')} prohibited this deployable_application from being saved:"
+				content = []
+				
+				content[0] = content_tag :p, :class => "text" do
+					"Houston, we got a problem..."
 				end
 
-				content_tag :ul do
-					resource.errors.full_messages.each do |msg|
+				content[1] = content_tag :ul do
+					errors_list = resource.errors.full_messages.map do |msg|
 						content_tag :li, msg
 					end
+
+					raw errors_list.join
 				end
+
+				raw content.join
 			end
 		end
 	end

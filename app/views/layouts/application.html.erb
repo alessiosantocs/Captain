@@ -44,8 +44,10 @@
 	<!-- THE CONTENT -->
 	<div class="container">
 		<!-- NOTICE/ALERT -->
-		<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
-		<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
+		<div class="application_alerts">
+			<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
+			<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
+		</div>
 
 		<%= yield %>
 	</div>

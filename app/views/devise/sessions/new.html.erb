@@ -2,6 +2,9 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
 
+	<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
+	<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
+
 	<%= f.input :email, :label => false, :placeholder => "Your email address" %>
 
 	<%= f.input :password, :label => false, :placeholder => "Your password" %>
