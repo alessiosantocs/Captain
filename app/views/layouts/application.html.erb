@@ -36,6 +36,11 @@
 	<% end %>
 
 	<br>
+
+	<% if controller_is?([:"devise/sessions", :"devise/registrations"]) %>
+		<h1 class="typo-brand-strong brand-logo">Captain</h1>
+	<% end %>
+
 	<!-- THE CONTENT -->
 	<div class="container">
 		<!-- NOTICE/ALERT -->

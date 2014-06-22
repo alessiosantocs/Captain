@@ -1,38 +1,35 @@
 <%= title "Create an account for Deployd" %>
 
-<div class="row">
-	<div class="col-lg-4">
-		<%= image_tag asset_url('identity/logo_presenter.png'), :width => "100%" %>
-	</div>
-	<div class="col-lg-8">
-		<br><br>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Start in seconds</h3>
-			</div>
-			<div class="panel-body">
-			<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
+<%= display_errors!(resource) %>
+	<% if resource.errors.any? %>
+		<div class="alert alert-danger">
+			<p class="text">
+				<%= pluralize(resource.errors.count, "error") %> prohibited this deployable_application from being saved:
+			</p>
 
-				<%= devise_error_messages! %>
-
-				<%= f.input :email %>
-
-				<% if @user.password_required? # Probably when logging with social (twitter) %>
-
-					<%= f.input :password %>
-
-					<%= f.input :password_confirmation %>
-
-				<% end %>
-
-				<%= btn_container do %>
-					<%= f.button :button, 'Sign up'.html_safe, :class => "btn btn-primary " %>
-				<% end %>
-
+			<ul>
+			<% resource.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
 			<% end %>
-			</div>
+			</ul>
 		</div>
+	<% end %>
 
-		<%= render "devise/shared/links" %>
-	</div>
-</div>
+	<%= f.input :email, :label => false, :placeholder => "Your email address" %>
+
+	<% if @user.password_required? # Probably when logging with social (twitter) %>
+
+		<%= f.input :password, :label => false, :placeholder => "Your password" %>
+
+		<%= f.input :password_confirmation, :label => false, :placeholder => "Repeat password" %>
+
+	<% end %>
+
+	<%= btn_container do %>
+		<%= f.button :button, 'Sign up'.html_safe, :class => "btn btn-primary " %>
+	<% end %>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
