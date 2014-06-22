@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Deployd website</title>
+	<title>Captain - Deployments tracking</title>
 	<script data-main="js/main" src="js/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
@@ -8,7 +8,7 @@
 <body>
 
 	<!-- THE SITE HEADER -->
-	<header class="navbar navbar-static-top da-navbar" id="top" role="banner">
+	<header class="navbar navbar-fixed-top da-navbar" id="top" role="banner">
 		<div class="container">
 			<div class="navbar-header">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -17,12 +17,18 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="../" class="navbar-brand">Deployd App</a>
+				<a href="#" class="navbar-brand">Captain</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="#features">Features</a>
+						<a href="#captain-what">What?</a>
+					</li>
+					<li>
+						<a href="#captain-how">How?</a>
+					</li>
+					<li>
+						<a href="#captain-features">Features</a>
 					</li>
 					<li>
 						<a href="https://github.com/alessiosantocs/deploydapp">Contribute</a>
@@ -36,29 +42,32 @@
 	<section class="da-row-container da-row-inverse text-center da-row-main">
 		<div class="container">
 			<div class="hero-unit">
-				<h1>Keep track of all your deployments <br>without any effort</h1>
+				<h1>Keep track of your deployments</h1>
+				<p class="lead">All of them, without any effort</p>
 				<div class="btn-group">
-					<a href="#" class="btn btn-lg btn-primary btn-outline-inverse">Discover how</a>
+					<a href="#captain-what" class="btn btn-lg btn-primary btn-outline-inverse">Discover Captain</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- THE PROBLEM BLOCK -->
-	<section class="da-row-container text-left">
+	<section class="da-row-container text-left" id="captain-what">
 		<div class="container"><!-- da-image-right -->
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
 					<div class="col-lg-6">
-						<h2>An ever lasting memory of your deployments</h2>
+						<h3>What's <span class="typo-brand-strong">Captain</span>?</h3>
 						<p class="lead">
-							
+							It's an ever lasting memory of all your web application's releases.
+						</p>
+						<p class="lead">
+							It has lots of different tools that will help you analyze your deployments history.
 						</p>
 					</div>
 
 					<div class="col-lg-6">
-						<img src="images/flatui-demopack/ui-pack_145.png">
-						<img src="images/flatui-demopack/ui-pack_189.png">
+						<img src="images/flatui-demopack/ui-pack_189.png" class="img-responsive floating-ghost-animation">
 					</div>
 				</div>
 
@@ -67,19 +76,22 @@
 	</section>
 
 	<!-- THE SOLUTION BLOCK -->
-	<section class="da-row-container text-left da-row-default">
+	<section class="da-row-container text-left da-row-default" id="captain-how">
 		<div class="container">
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
 					<div class="col-lg-6">
-						<img src="images/flatui-demopack/ui-pack_21.png">
-						<img src="images/flatui-demopack/ui-pack_95.png">
+						<img src="images/flatui-demopack/ui-pack_271.png" class="img-responsive oscillation-animation">
 					</div>
 
 					<div class="col-lg-6">
-						<p class="lead">Focus on your code and don't worry about things like that anymore.</p>
-						<p class="lead">We track and manage your deployments and all that derives automatically.</p>
-						<p class="lead">We put everything in one place, finally.</p>
+						<h3>How does it work?</h3>
+						<p class="lead">
+							Captain is a combination of a simple but effective gem, plus a centralized Data Management System.
+						</p>
+						<p class="lead">
+							It seamlessly integrates into your application's routines and gather data in background.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -87,23 +99,23 @@
 	</section>
 
 	<!-- SET OF FEATURES -->
-	<section class="da-row-container text-center da-row-default">
+	<section class="da-row-container text-center da-row-default" id="captain-features">
 		<div class="container">
 			<div class="hero-unit da-hero-secondary">
-				<h2 class="bs-docs-featurette-title">Must have features</h2>
-				<p class="lead">What makes Deployd App a must have for your application's environment.</p>
+				<h2 class="bs-docs-featurette-title">Trust your <span class="typo-brand-strong">Captain</span></h2>
+				<p class="lead">Here's what it's all about. Super features for your awesome crew!</p>
 
 				<hr class="half-rule">
 
 				<div class="row">
 					<div class="col-sm-4">
 						<img src="images/flatui-demopack/ui-pack_19.png" alt="Sass and Less support" class="img-responsive">
-						<h3>Deploy configuration</h3>
+						<h3>Tons of customizations</h3>
 						<p class="text">In addition to vanilla CSS, Bootstrap includes support for the two most popular CSS preprocessors, <a href="../css/#less">Less</a> and <a href="../css/#sass">Sass</a>.</p>
 					</div>
 					<div class="col-sm-4">
 						<img src="images/flatui-demopack/ui-pack_25.png" alt="Responsive across devices" class="img-responsive">
-						<h3>Team email</h3>
+						<h3>Crew Mail</h3>
 						<p class="text">Bootstrap easily and efficiently scales your project with one code base, from phones to tablets to desktops.</p>
 					</div>
 					<div class="col-sm-4">

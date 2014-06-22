@@ -36,6 +36,7 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 			params.require(:deployment).permit(:branch, :environment, :revision, :repo)
 		end
 
+		# Check if deploy branch are equals to settings
 		def validate_branch_and_environment(app, params)
 			unless @app.branch == params[:deployment][:branch] && @app.environment == params[:deployment][:environment]
 				raise Net::HTTPUnauthorized

@@ -1,15 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Courgette);
+
 @import "variables";
+@import "helpers/animations";
 
 @import "components/buttons";
 @import "components/row_container";
 @import "components/forms";
-@import "components/headings";
+@import "components/typography";
+
+body{
+	padding-top: 50px;
+}
 
 /*Custom navbar*/
 .da-navbar{
 	border-bottom: 1px solid #eee;
 	margin-bottom: 0;
-
+	background: white;
 	.navbar-nav{
 		>li{
 			>a{
@@ -31,7 +38,8 @@
 	}
 
 	.navbar-brand{
-		color: #999999;
+		color: $primary_color;
+		font-family: 'Courgette', cursive;
 
 		&:hover{
 			color: #4D4D4D;
@@ -44,18 +52,6 @@
 .da-footer{
 	border-top: 1px solid #ccc;
 }
-
-p{
-	&.text{
-		font-size: 19px;
-	}
-
-	&.lead{
-		font-size: 26px;
-	}
-
-}
-
 
 /*Main hero unit*/
 .da-hero-main{

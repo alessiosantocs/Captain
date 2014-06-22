@@ -2,7 +2,9 @@
 	
 	<% if @deployable_application.errors.any? %>
 		<div class="alert alert-danger">
-			<p class="text"><%= pluralize(@deployable_application.errors.count, "error") %> prohibited this deployable_application from being saved:</p>
+			<p class="text">
+				<%= pluralize(@deployable_application.errors.count, "error") %> prohibited this deployable_application from being saved:
+			</p>
 
 			<ul>
 			<% @deployable_application.errors.full_messages.each do |msg| %>
