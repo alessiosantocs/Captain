@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Deployd website</title>
+	<title>Captain - Deployments tracking</title>
 	<script data-main="js/main" src="js/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
@@ -8,7 +8,7 @@
 <body>
 
 	<!-- THE SITE HEADER -->
-	<header class="navbar navbar-static-top da-navbar" id="top" role="banner">
+	<header class="navbar navbar-fixed-top da-navbar" id="top" role="banner">
 		<div class="container">
 			<div class="navbar-header">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -17,12 +17,18 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="../" class="navbar-brand">Deployd App</a>
+				<a href="#" class="navbar-brand">Captain</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="#features">Features</a>
+						<a href="#captain-what">What?</a>
+					</li>
+					<li>
+						<a href="#captain-how">How?</a>
+					</li>
+					<li>
+						<a href="#captain-features">Features</a>
 					</li>
 					<li>
 						<a href="https://github.com/alessiosantocs/deploydapp">Contribute</a>
@@ -36,78 +42,86 @@
 	<section class="da-row-container da-row-inverse text-center da-row-main">
 		<div class="container">
 			<div class="hero-unit">
-				<h1>Keep track of all your deployments <br>without any effort</h1>
+				<h1>Keep track of your deployments</h1>
+				<p class="lead">All of them, without any effort</p>
 				<div class="btn-group">
-					<a href="#" class="btn btn-lg btn-outline-inverse">Discover how</a>
+					<a href="#captain-what" class="btn btn-lg btn-primary btn-outline-inverse">Discover Captain</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- THE PROBLEM BLOCK -->
-	<section class="da-row-container text-left">
-		<div class="container da-image-right">
+	<section class="da-row-container text-left" id="captain-what">
+		<div class="container"><!-- da-image-right -->
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
 					<div class="col-lg-6">
-						<p>What did you deploy five weeks ago?</p>
-						<p>What pull requests? Were there any bug-fixes? Any bug perhaps?</p>
-						<p>Stop guessing and get your answer in seconds, like a breeze</p>
+						<h3>What's <span class="typo-brand-strong">Captain</span>?</h3>
+						<p class="lead">
+							It's an ever lasting memory of all your web application's releases.
+						</p>
+						<p class="lead">
+							It has lots of different tools that will help you analyze your deployments history.
+						</p>
 					</div>
 
 					<div class="col-lg-6">
+						<img src="images/flatui-demopack/ui-pack_189.png" class="img-responsive floating-ghost-animation">
 					</div>
 				</div>
 
-				<img src="images/resources/phase-01.png" width="500" style="margin-bottom: 90px;">
 			</div>
 		</div>
 	</section>
 
 	<!-- THE SOLUTION BLOCK -->
-	<section class="da-row-container text-left da-row-default">
-		<div class="container da-image-left">
+	<section class="da-row-container text-left da-row-default" id="captain-how">
+		<div class="container">
 			<div class="hero-unit da-hero-secondary">
 				<div class="row">
 					<div class="col-lg-6">
+						<img src="images/flatui-demopack/ui-pack_271.png" class="img-responsive oscillation-animation">
 					</div>
 
 					<div class="col-lg-6">
-						<p>Focus on your code and don't worry about things like that anymore.</p>
-						<p>We track and manage your deployments and all that derives automatically.</p>
-						<p>We put everything in one place, finally.</p>
+						<h3>How does it work?</h3>
+						<p class="lead">
+							Captain is a combination of a simple but effective gem, plus a centralized Data Management System.
+						</p>
+						<p class="lead">
+							It seamlessly integrates into your application's routines and gather data in background.
+						</p>
 					</div>
 				</div>
-
-				<img src="images/resources/phase-02.png" width="500" style="margin-bottom: 90px;">
 			</div>
 		</div>
 	</section>
 
 	<!-- SET OF FEATURES -->
-	<section class="da-row-container text-center">
+	<section class="da-row-container text-center da-row-default" id="captain-features">
 		<div class="container">
 			<div class="hero-unit da-hero-secondary">
-				<h2 class="bs-docs-featurette-title">Designed for everyone, everywhere.</h2>
-				<p class="lead">Bootstrap makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all shapes, and projects of all sizes.</p>
+				<h2 class="bs-docs-featurette-title">Trust your <span class="typo-brand-strong">Captain</span></h2>
+				<p class="lead">Here's what it's all about. Super features for your awesome crew!</p>
 
 				<hr class="half-rule">
 
 				<div class="row">
 					<div class="col-sm-4">
-						<img src="http://getbootstrap.com/assets/img/sass-less.png" alt="Sass and Less support" class="img-responsive">
-						<h3>Preprocessors</h3>
-						<p>In addition to vanilla CSS, Bootstrap includes support for the two most popular CSS preprocessors, <a href="../css/#less">Less</a> and <a href="../css/#sass">Sass</a>.</p>
+						<img src="images/flatui-demopack/ui-pack_19.png" alt="Sass and Less support" class="img-responsive">
+						<h3>Tons of customizations</h3>
+						<p class="text">In addition to vanilla CSS, Bootstrap includes support for the two most popular CSS preprocessors, <a href="../css/#less">Less</a> and <a href="../css/#sass">Sass</a>.</p>
 					</div>
 					<div class="col-sm-4">
-						<img src="http://getbootstrap.com/assets/img/devices.png" alt="Responsive across devices" class="img-responsive">
-						<h3>One framework, every device.</h3>
-						<p>Bootstrap easily and efficiently scales your project with one code base, from phones to tablets to desktops.</p>
+						<img src="images/flatui-demopack/ui-pack_25.png" alt="Responsive across devices" class="img-responsive">
+						<h3>Crew Mail</h3>
+						<p class="text">Bootstrap easily and efficiently scales your project with one code base, from phones to tablets to desktops.</p>
 					</div>
 					<div class="col-sm-4">
-						<img src="http://getbootstrap.com/assets/img/components.png" alt="Components" class="img-responsive">
-						<h3>Comprehensive docs</h3>
-						<p>With Bootstrap, you get extensive and beautiful documentation with hundreds of live examples, code snippets, and more.</p>
+						<img src="images/flatui-demopack/ui-pack_151.png" alt="Components" class="img-responsive">
+						<h3>Improve your team</h3>
+						<p class="text">With Bootstrap, you get extensive and beautiful documentation with hundreds of live examples, code snippets, and more.</p>
 					</div>
 				</div>
 
@@ -115,17 +129,25 @@
 		</div>
 	</section>
 
-	<section class="da-row-container da-row-cta da-row-size1">
+	<!-- SET OF FEATURES -->
+	<section class="da-row-container da-row-inverse">
 		<div class="container">
-			<div class="row">
-				<form>
-					<div class="col-sm-9">
-						<input type="email" autocomplete="off" name="email" placeholder="Enter your email here" class="da-flat-text">
-					</div>
-					<div class="col-sm-3">
-						<button class="btn btn-primary btn-lg" style="margin: 20px 0px;">Send me updates</button>
-					</div>
-				</form>
+			<div class="hero-unit da-hero-secondary">
+				<h2 class="bs-docs-featurette-title">Build it with us</h2>
+				<p class="lead">
+					Help us building a super product, we would love to get you onboard and hear what you have to say.
+				</p>
+
+				<div class="row">
+					<form>
+						<div class="col-sm-9">
+							<input type="email" autocomplete="off" name="email" placeholder="Enter your email here" class="form-control input-lg">
+						</div>
+						<div class="col-sm-3">
+							<button class="btn btn-primary btn-lg btn-primary btn-outline-inverse">Send me updates</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>

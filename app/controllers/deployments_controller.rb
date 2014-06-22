@@ -2,7 +2,7 @@ class DeploymentsController < BaseController
 	# must be logged in
 	before_filter :authenticate_user!, :scm_associate_user!
 
-	before_action :set_deployment, only: [:show, :edit, :update, :destroy]
+	before_action :set_deployable_application, only: [:show, :edit, :update, :destroy]
 
 
 	# GET /deployments
@@ -75,15 +75,20 @@ class DeploymentsController < BaseController
 	end
 
 	private
-		# Use callbacks to share common setup or constraints between actions.
-		def set_deployment
+		def set_deployable_application
 			if deployable_application_id = params[:deployable_application_id]
 				@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
-				@deployment = @deployable_application.deployments.find(params[:id])
-			else
-				@deployment = Deployment.find(params[:id])
 			end
 		end
+		# Use callbacks to share common setup or constraints between actions.
+		# def set_deployment
+		# 	if deployable_application_id = params[:deployable_application_id]
+		# 		@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
+		# 		@deployment = @deployable_application.deployments.find(params[:id])
+		# 	else
+		# 		@deployment = Deployment.find(params[:id])
+		# 	end
+		# end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployment_params

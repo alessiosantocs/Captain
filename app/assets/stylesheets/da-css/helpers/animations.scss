@@ -1,0 +1,37 @@
+// Animations
+
+	@-webkit-keyframes floating-ghost {
+		from{
+			-webkit-transform:translate(0, 0px);
+		}
+		65%{
+			-webkit-transform:translate(0, 15px);
+		}
+		to{
+			-webkit-transform:translate(0, 0px);
+		}
+	}
+
+	@-webkit-keyframes oscillation {
+		from{
+			-webkit-transform:rotate(-2deg);
+		}
+		65%{
+			-webkit-transform:rotate(2deg);
+		}
+		to{
+			-webkit-transform:rotate(-2deg);
+		}
+	}
+
+
+
+// General declarations
+
+.floating-ghost-animation{
+	-webkit-animation: floating-ghost 4s ease infinite;
+}
+
+.oscillation-animation{
+	-webkit-animation: oscillation 5s ease infinite;
+}

@@ -1,5 +1,5 @@
 class DeployableApplicationsController < BaseController
-
+	
 	before_action :scm_associate_user!
 	before_action :set_deployable_application, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +30,9 @@ class DeployableApplicationsController < BaseController
 
 		respond_to do |format|
 			if @deployable_application.save
-				format.html { redirect_to @deployable_application, notice: 'DeployableApplication was successfully created.' }
+				format.html { 
+					flash[:application_created] = true
+					redirect_to @deployable_application, notice: 'DeployableApplication was successfully created.' }
 				format.json { render action: 'show', status: :created, location: @deployable_application }
 			else
 				format.html { render action: 'new' }

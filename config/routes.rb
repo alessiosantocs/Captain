@@ -1,3 +1,4 @@
+
 Deploydapp::Application.routes.draw do
 	# Devise stuff
 	devise_for :users
@@ -18,15 +19,8 @@ Deploydapp::Application.routes.draw do
 		resources :deployments
 	end
 
-	# Here we go with the api
-	namespace :api, defaults: {format: 'json'} do
-		namespace :v1 do
-			resources :deployments do
-				get 'test' => 'deployments#create'
-			end
-		end
-	end
-
+	# Include api routes
+	draw :api
 
 	root :to => "deployable_applications#index"
 

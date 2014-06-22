@@ -1,0 +1,51 @@
+h1 {
+  font-size: 42px; }
+
+h2 {
+  font-size: 36px; }
+
+h3 {
+  font-size: 30px; }
+
+h4 {
+  font-size: 24px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  font-size: 12px; }
+
+.typo-brand-strong {
+  font-family: "Courgette", cursive; }
+
+.typo-brand-weak {
+  font-family: Arial; }
+
+.text-primary {
+  color: #1d6fb7; }
+
+.text-warning {
+  color: #f0ad4e; }
+
+.text-danger {
+  color: #d2322d; }
+
+.text-info {
+  color: #5bc0de; }
+
+.text-white {
+  color: white; }
+
+.text-success {
+  color: #5cb85c; }
+
+p {
+  font-family: Arial; }
+  p.text {
+    font-size: 19px; }
+  p.lead {
+    font-size: 21px; }
+    @media (min-width: 768px) {
+      p.lead {
+        font-size: 26px; } }

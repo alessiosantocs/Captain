@@ -1,0 +1,33 @@
+// Color palette
+$blue: #1d6fb7;
+$light_blue: #5bc0de;
+$red: #d2322d;
+$yellow: #f0ad4e;
+$green: #5cb85c;
+
+// Color denomination
+$base_color: black;
+$primary_color: $blue;
+$secondary_color: $light_blue;
+$strong_color: $blue;
+$weak_color: $light_blue;
+$success_color: $green;
+
+// Fonts
+$font_brand_strong: 'Courgette', cursive;
+$font_brand_weak: Arial;
+
+// Actionable colors
+$action_primary: 	$primary_color;
+$action_success: 	$success_color;
+$action_warning: 	$yellow;
+$action_danger: 	$red;
+$action_default: 	$weak_color;
+$action_info: 		$weak_color;
+
+// Sections colors
+$section_primary: $primary_color;
+$section_success: $success_color;
+$section_info: $weak_color;
+$section_danger: $strong_color;
+$section_dream: $secondary_color;

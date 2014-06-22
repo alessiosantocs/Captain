@@ -1,12 +1,22 @@
-@import "components/buttons.css";
-@import "components/row_container.css";
-@import "components/forms.css";
+@import url(http://fonts.googleapis.com/css?family=Courgette);
+
+@import "variables";
+@import "helpers/animations";
+
+@import "components/buttons";
+@import "components/row_container";
+@import "components/forms";
+@import "components/typography";
+
+body{
+	padding-top: 50px;
+}
 
 /*Custom navbar*/
 .da-navbar{
 	border-bottom: 1px solid #eee;
 	margin-bottom: 0;
-
+	background: white;
 	.navbar-nav{
 		>li{
 			>a{
@@ -28,7 +38,8 @@
 	}
 
 	.navbar-brand{
-		color: #999999;
+		color: $primary_color;
+		font-family: 'Courgette', cursive;
 
 		&:hover{
 			color: #4D4D4D;
@@ -50,11 +61,6 @@
 	h1{
 		margin-bottom: 50px;
 	}
-
-	p{
-		font-size: 22px;
-	}
-
 }
 
 /*Main hero unit*/
@@ -66,11 +72,11 @@
 		margin-bottom: 50px;
 	}
 
-	p{
-		font-size: 26px;
-	}
 }
 
+.img-responsive{
+	margin: auto;
+}
 
 .half-rule {
 width: 100px;

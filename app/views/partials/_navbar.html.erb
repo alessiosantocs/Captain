@@ -1,4 +1,4 @@
-<nav id="app_main_navigation" class="navbar da-navbar" role="navigation">
+<nav id="app_main_navigation" class="navbar navbar-fixed-top da-navbar" role="navigation">
 
 	<div class="container">
 		<div class="navbar-header">
@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<%= link_to "DeploydApp", root_url, :class => "navbar-brand" %>
+			<%= link_to "Captain", root_url, :class => "navbar-brand" %>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,15 +18,15 @@
 
 				<ul class="nav navbar-nav">
 					<li>
-						<%= link_to authentications_url do %>
-							<span class="glyphicon glyphicon-user"></span>
-							Your account
+						<%= link_to deployable_applications_url do %>
+							<span class="glyphicon glyphicon-tasks"></span>
+							Your applications
 						<% end %>
 					</li>
 					<li>
-						<%= link_to deployable_applications_url do %>
+						<%= link_to authentications_url do %>
 							<span class="glyphicon glyphicon-user"></span>
-							Your applications
+							Your account
 						<% end %>
 					</li>
 				</ul>
@@ -40,7 +40,7 @@
 
 			<% else %>
 
-				<%= link_to "Get on board", authentications_url, :class => "btn btn-outline navbar-btn navbar-right" %>
+				<%= link_to "Get on board", authentications_url, :class => "btn btn-primary btn-outline navbar-btn" %>
 				
 			<% end %>
 
