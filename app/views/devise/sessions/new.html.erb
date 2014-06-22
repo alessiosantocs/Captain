@@ -1,13 +1,13 @@
-<%= title "Sign in with your email" %>
+<%= title "Sign in" %>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form form-horizontal"}) do |f| %>
 
-	<%= f.input :email %>
+	<%= f.input :email, :label => false, :placeholder => "Your email address" %>
 
-	<%= f.input :password %>
+	<%= f.input :password, :label => false, :placeholder => "Your password" %>
 
 	<% if devise_mapping.rememberable? -%>
-		<%= f.input :remember_me, :as => :boolean %>
+		<%= f.hidden_field :remember_me, :as => :boolean, :input_html => {:checked => true} %>
 	<% end -%>
 
 	<%= btn_container do %>

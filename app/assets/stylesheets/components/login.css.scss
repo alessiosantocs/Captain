@@ -1,5 +1,55 @@
-body.devise_registrations{
+@import "da-css/variables";
+body.devise_registrations, body.devise_sessions{
+	background: $primary_color;
+
 	#app_main_navigation{
 		display: none;
+	}
+
+	.brand-logo{
+		text-align: center;
+		color: white;
+		margin-bottom: 20px;
+	}
+	.container{
+		position: relative;
+		background: white;
+		max-width: 400px;
+
+		border-radius: 3px;
+
+		.page-header{
+			margin: 0;
+			padding: 0;
+
+			margin-bottom: 20px;
+
+			h1{
+				font-size: 20px;
+				margin: 10px 0px;
+			}
+
+		}
+		.form{
+			.col-lg-10{
+				width: 100%;
+			}
+		}
+
+		.devise-links{
+			position: absolute;
+			left: 0;
+			margin-top: 10px;
+
+			a{
+				color: $weak_color;
+
+				&:not(:last-child):after{
+					content: "-";
+					color: white;
+					margin-left: 5px;
+				}
+			}
+		}
 	}
 }
