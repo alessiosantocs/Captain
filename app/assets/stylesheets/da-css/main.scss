@@ -82,3 +82,21 @@ body{
 width: 100px;
 margin: 40px auto;
 }
+
+#CaptainEmailForm{
+
+	.da-form-success-message{
+		display: none;
+	}
+
+	&.success{
+		.da-form-fieldset{
+			display: none;
+		}
+
+		.da-form-success-message{
+			display: block;
+		}
+	}
+
+}

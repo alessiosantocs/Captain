@@ -357,3 +357,10 @@ body {
 .half-rule {
   width: 100px;
   margin: 40px auto; }
+
+#CaptainEmailForm .da-form-success-message {
+  display: none; }
+#CaptainEmailForm.success .da-form-fieldset {
+  display: none; }
+#CaptainEmailForm.success .da-form-success-message {
+  display: block; }
