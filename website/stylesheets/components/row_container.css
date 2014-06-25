@@ -38,6 +38,8 @@ section {
   section.section-primary {
     background: #1d6fb7;
     color: white; }
+  section.section-default {
+    border-top: 1px solid #ccc; }
   section.section-size-1 {
     padding: 30px 0px; }
   section.section-size-2 {

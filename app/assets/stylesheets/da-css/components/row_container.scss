@@ -70,6 +70,10 @@ section{
 		color: white;
 	}
 
+	&.section-default{
+		border-top: 1px solid #ccc;
+	}
+
 	// &.section-info{
 	// 	background: $section_info;
 	// 	color: $violet;
