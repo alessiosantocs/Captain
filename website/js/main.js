@@ -1,15 +1,29 @@
 require(["lib/jquery.min"], function (jquery) {
-	require(["lib/bootstrap.min"]);
+	require(["lib/bootstrap.min", "lib/vertical-align", "lib/window-sized", "lib/jquery.scrollTo.min"]);
 
-	// ACTUAL CODE
-	$("#CaptainEmailForm").submit(function (event) {
-		event.preventDefault();
+	$(document).ready(function () {
+		// ACTUAL CODE
 
-		var form = $(this);
-		var data = form.serialize();
+		$(document).ready(function () {
+			$('a').click(function(){
+				var href = $.attr(this, 'href');
+				$.scrollTo($(href), 500, function () {
+					window.location.hash = href;
+				});
+				return false;
+			});
+		});
 
-		$.post(form.attr("action"), data);
+		$("#CaptainEmailForm").submit(function (event) {
+			event.preventDefault();
 
-		form.addClass("success");
-	})
+			var form = $(this);
+			var data = form.serialize();
+
+			$.post(form.attr("action"), data);
+
+			form.addClass("success");
+		});
+	});
+
 });
