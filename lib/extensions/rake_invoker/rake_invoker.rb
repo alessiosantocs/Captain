@@ -4,7 +4,7 @@ class RakeInvoker
 		task_name	= args.values.first.to_s
 
 		params		= args.select{|key, value| key.to_s != rake_name}
-							.map_pair{|k, v| k.to_s + "=" + value}
+							.map_pair{|k, v| k.to_s + "=" + v.to_s}
 							.join(" ")
 
 		Thread.new do
