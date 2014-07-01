@@ -1,0 +1,10 @@
+.application_alerts {
+  -webkit-transition: height .5s ease;
+  overflow: hidden;
+  cursor: default; }
+  .application_alerts.read {
+    height: 0px !important; }
+  .application_alerts .alert {
+    padding: 5px;
+    border-radius: 0px;
+    margin-bottom: 0px; }

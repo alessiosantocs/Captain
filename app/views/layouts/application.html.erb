@@ -11,6 +11,26 @@
 	<!-- SIGNIN/SIGNOUT -->
 	<%= render :partial => "partials/navbar" %>
 
+	<!-- NOTICE/ALERT -->
+	<div class="application_alerts">
+		<% if notice %>
+			<div class="alert alert-success">
+				<div class="container">
+					<%= notice %>
+				</div>
+			</div>
+		<% end %>
+		<% if alert %>
+			<div class="alert alert-danger">
+				<div class="container">
+					<%= alert %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+
+
 	<!-- Title of the page section -->
 	<% if (yield :title).present? %>
 		<section class="section-primary section-size-1">
@@ -43,12 +63,6 @@
 
 	<!-- THE CONTENT -->
 	<div class="container">
-		<!-- NOTICE/ALERT -->
-		<div class="application_alerts">
-			<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
-			<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
-		</div>
-
 		<%= yield %>
 	</div>
 

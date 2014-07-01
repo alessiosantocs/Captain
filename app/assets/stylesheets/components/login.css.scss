@@ -3,6 +3,11 @@ body.devise_registrations, body.devise_sessions{
 	// Put a strong background
 	background: $primary_color;
 
+	// Hide application's alert
+	.application_alerts{
+		display: none;
+	}
+
 	// Hide navbar
 	#app_main_navigation{
 		display: none;
@@ -42,11 +47,6 @@ body.devise_registrations, body.devise_sessions{
 			.col-lg-10{
 				width: 100%;
 			}
-		}
-
-		// Hide application's alert
-		.application_alerts{
-			display: none;
 		}
 
 		// Put links the bottom
