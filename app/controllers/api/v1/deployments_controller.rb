@@ -12,9 +12,9 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 
 
 		# CREATE NEW RAKE DEPLOY
-		@deployment 		= Deployment.new(deployment_params)
+		@deployment 		= @app.deployments.create!(deployment_params)
 
-		RakeInvoker.run(pull_requests: :fetch_for_app, public_token: @app.public_token, app_id: @app.id, deployment_id: @deployment.id)
+		RakeInvoker.run(pull_requests: :fetch_for_app, PUBLIC_TOKEN: @app.public_token, APP_ID: @app.id, DEPLOYMENT_ID: @deployment.id)
 
 		# @deployment.user 	= User.first
 
