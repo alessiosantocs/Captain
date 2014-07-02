@@ -1,6 +1,6 @@
 <% content_for :title do %>
 	<%= title "Deployment ##{@deployment.id}", :wrapper_class => "" %>
-	<%= sub_title "Deployed #{time_ago_in_words @deployment.created_at}" %>
+	<%= sub_title "Deployed #{time_ago_in_words @deployment.created_at} ago" %>
 <% end %>
 
 <table class="table">
