@@ -4,6 +4,7 @@
 	<script data-main="js/main" src="js/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
 	<!-- Google Tag Manager -->
@@ -26,7 +27,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Captain</a>
+				<a href="#captain" class="navbar-brand">Captain</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
@@ -49,7 +50,7 @@
 	</header>
 
 	<!-- THE MAIN BLOCK - WITH CTA -->
-	<section class="da-row-container da-row-inverse text-center da-row-main">
+	<section class="da-row-container da-row-inverse text-center da-row-main" id="captain">
 		<div class="container">
 			<div class="hero-unit">
 				<h1>Keep track of your deployments</h1>
@@ -192,38 +193,43 @@
 	</section>
 
 	<!-- SET OF FEATURES -->
-	<section class="section-primary" id="captain-beta">
-		<div class="container">
-			<h2 class="bs-docs-featurette-title">Build it with us</h2>
-			<p class="lead">
-				We are currently working on our Alpha version of both the application and the gem. We are a very small team of two friendly geeks.
-			</p>
-			<p class="lead">
-				If you are a developer, a geek or a smart guy you can help us build a super product. We would love to get you onboard and hear what you have to say.
-			</p>
+	<section class="section-primary window-sized" id="captain-beta">
+		<div class="vertically-aligned">
 
-			<form id="CaptainEmailForm" action="https://docs.google.com/a/pazienti.org/forms/d/1KPqY080Lz4pteKKt77DPDD2ZCaB6FgW644CLs2rsFCw/formResponse" method="POST">
-				<fieldset class="da-form-fieldset">
-					<div class="row">
-						<div class="col-sm-9">
-							<input type="email" autocomplete="off" name="entry.402878485" placeholder="Leave us your email here..." class="form-control input-lg">
-						</div>
-						<div class="col-sm-3">
-							<button class="btn btn-primary btn-lg btn-primary btn-outline-inverse">
-								I'm absolutely in!
-							</button>
-						</div>
-					</div>
-				</fieldset>
-
-				<p class="text da-form-success-message">
-					Thanks for your awesome support! We'll get in touch soon.
+			<div class="container">
+				<h2 class="bs-docs-featurette-title">Build it with us</h2>
+				<p class="lead">
+					We are currently working on our Alpha version of both the application and the gem. We are a very small team of two friendly geeks.
 				</p>
-			</form>
+				<p class="lead">
+					If you are a developer, a geek or a smart guy you can help us build a super product. We would love to get you onboard and hear what you have to say.
+				</p>
 
-			<p class="text">Made with <i class="glyphicon glyphicon-heart"></i> in Milan by <strong>Ale</strong> and <strong>Sal</strong></p>
+				<form id="CaptainEmailForm" action="https://docs.google.com/a/pazienti.org/forms/d/1KPqY080Lz4pteKKt77DPDD2ZCaB6FgW644CLs2rsFCw/formResponse" method="POST">
+					<fieldset class="da-form-fieldset">
+						<div class="row">
+							<div class="col-sm-9">
+								<input type="email" autocomplete="off" name="entry.402878485" placeholder="Leave us your email here..." class="form-control input-lg">
+							</div>
+							<div class="col-sm-3">
+								<button class="btn btn-primary btn-lg btn-primary btn-outline-inverse">
+									I'm absolutely in!
+								</button>
+							</div>
+						</div>
+					</fieldset>
 
+					<p class="text da-form-success-message">
+						Thanks for your awesome support! We'll get in touch soon.
+					</p>
+				</form>
+
+				<p class="text">Made with <i class="glyphicon glyphicon-heart"></i> in Milan by <strong>Ale</strong> and <strong>Sal</strong></p>
+
+			</div>
+			
 		</div>
+
 	</section>
 
 

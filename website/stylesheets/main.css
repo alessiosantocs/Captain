@@ -315,6 +315,9 @@ p {
 body {
   padding-top: 50px; }
 
+.vertically-aligned {
+  width: 100%; }
+
 /*Custom navbar*/
 .da-navbar {
   border-bottom: 1px solid #eee;
