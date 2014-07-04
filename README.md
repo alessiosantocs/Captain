@@ -1,5 +1,5 @@
 #Captain
-This is the official documentation for Captain ([https://alessiosantocs.github.io/captain](https://alessiosantocs.github.io/captain))
+This is the official documentation for Captain ([https://alessiosantocs.github.io/Captain](https://alessiosantocs.github.io/Captain))
 
 ##What is it?
 Captain is a deployment tracking system. It tracks deployments of web applications by simply integrating into your app's deployment process.
