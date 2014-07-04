@@ -18,26 +18,27 @@ Supported infrastructures:
 
 For any other configuration, we'd be more than happy to listen what you have to say about Captain and have a look at your app's environment to better understand what integration might be built around that.
 
-##Basic usage
+##Getting started
 Using Captain should be very straight forward. 
+Let's have a look at how it integrates in different systems; but before that, create an account at [http://deploydapp.herokuapp.com](http://deploydapp.herokuapp.com) (or at your self-hosted application's url):
+
+1. Authenticate with your SCM
+2. Create an application
+3. Get your public key from the instruction popup.
+
+###Installing on Rails + Bitbucket + Capistrano
+Few steps for a great integration. Install the _captain-rails_ gem for in your gemfile like this:
     
-    gem 'deployd', :git => 'https://github.com/alessiosantocs/deployd'
+    gem 'captain-rails', :git => 'https://github.com/alessiosantocs/captain-rails' # Then bundle install
 
-Then you just call the rake task (TODO completely):
+Then a rake must be called:
 
-    rake deployd:install PUBLIC_TOKEN=<YOUR_PUBLIC_TOKEN_HERE> APP_NAME=<YOUR_APP_NAME_HERE>
+    rake captain:install[<Your public token>]
 
-It should create for you the config/initializers/deployd.rb file with credentials and insert a few lines of code into your config/deploy.rb file.
+It should do everything by itself.
 
-Once done, you can **cap whatever deploy** your application and DeploydApp will do the rest.
-
-The rest is:
-
-- Injecting code into your capistrano deploy procedure
-- Invoke a rake to notify the system of your deployment (passing some important stuff such as the deployed branch, the current revision, the environment)
-- The system will start a rake to fetch all new merged pull requests from bitbucket
-
-Then you shall go to your backend and have the list of your desires.
+Once done, you can **cap whatever deploy** your application and Captain will do the rest.
+You'll start noticing deployments coming on your dashboard.
 
 ##Open source Vs. Hosted service
 We love open source and we think the time is right to start a project like this and involve the entire community to come and contribute.
