@@ -6,7 +6,7 @@ Captain is a deployment tracking system. It tracks deployments of web applicatio
 
 Captain's purpose is to integrate and lead to success every deploy of every kind of web app!
 
-Unfortunately, right now, _Captain is under development_ and it may be not be available for some infrastructure yet. See the [development status](#captain-status) to check if we support your system or help us **build an integration** (coming soon!).
+Unfortunately, right now, _Captain is under development_ and it may be not be available for some infrastructure yet. See the [development status](#development-status) to check if we support your system or help us **build an integration** (coming soon!).
 
 
 ##Development status
