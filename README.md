@@ -1,29 +1,50 @@
-#DeploydApp
-A hassle-free deployment tracking system that will never forget one.
+#Captain
+This is the official documentation for Captain ([https://alessiosantocs.github.io/Captain](https://alessiosantocs.github.io/Captain))
 
-##Development guidelines
-TODO...
+##What is it?
+Captain is a deployment tracking system. It tracks deployments of web applications by simply integrating into your app's deployment process.
 
-##What it does right now
-It tracks deployments of web applications written in **Ruby on Rails** and deployed with **Capistrano** using **Bitbucket** as repo-management-system.
+Captain's purpose is to integrate and lead to success every deploy of every kind of web app!
 
-##How does it work?
-First, you install the gem provided at [https://github.com/alessiosantocs/deployd](https://github.com/alessiosantocs/deployd) like this in your gemfile:
+Unfortunately, right now, _Captain is under development_ and it may be not be available for some infrastructure yet. See the [development status](#development-status) to check if we support your system or help us **build an integration** (coming soon!).
+
+
+##Development status
+We are currently on _Alpha stage_.
+
+Supported infrastructures:
+
+- Application type: **Ruby on Rails** - Scm service: **BitBucket** - Deployed with: **Capistrano**
+
+For any other configuration, we'd be more than happy to listen what you have to say about Captain and have a look at your app's environment to better understand what integration might be built around that.
+
+##Getting started
+Using Captain should be very straight forward. 
+Let's have a look at how it integrates in different systems; but before that, create an account at [http://deploydapp.herokuapp.com](http://deploydapp.herokuapp.com) (or at your self-hosted application's url):
+
+1. Authenticate with your SCM
+2. Create an application
+3. Get your public key from the instruction popup.
+
+###Installing on Rails + Bitbucket + Capistrano
+Few steps for a great integration. Install the _captain-rails_ gem for in your gemfile like this:
     
-    gem 'deployd', :git => 'https://github.com/alessiosantocs/deployd'
+    gem 'captain-rails', :git => 'https://github.com/alessiosantocs/captain-rails' # Then bundle install
 
-Then you just call the rake task (TODO completely):
+Then a rake must be called:
 
-    rake deployd:install PUBLIC_TOKEN=<YOUR_PUBLIC_TOKEN_HERE> APP_NAME=<YOUR_APP_NAME_HERE>
+    rake captain:install[<Your public token>]
 
-It should create for you the config/initializers/deployd.rb file with credentials and insert a few lines of code into your config/deploy.rb file.
+It should do everything by itself.
 
-Once done, you can **cap whatever deploy** your application and DeploydApp will do the rest.
+Once done, you can **cap whatever deploy** your application and Captain will do the rest.
+You'll start noticing deployments coming on your dashboard.
 
-The rest is:
+##Open source Vs. Hosted service
+We love open source and we think the time is right to start a project like this and involve the entire community to come and contribute.
 
-- Injecting code into your capistrano deploy procedure
-- Invoke a rake to notify the system of your deployment (passing some important stuff such as the deployed branch, the current revision, the environment)
-- The system will start a rake to fetch all new merged pull requests from bitbucket
+This open source approach will allow developers and application owners also to build a self hosted version of Captain on their own servers.
 
-Then you shall go to your backend and have the list of your desires.
+Right now, we're hosting a centralized solution to deliver the most effortless experience to  users.
+
+Feel free to fork and contribute to the gem using the guideline (we're working on it). You can also report bugs in the issue tracker and so forth.
