@@ -13,9 +13,9 @@ class DeploymentsController < BaseController
 
 		if deployable_application_id = app_id
 			@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
-			@deployments = @deployable_application.deployments.all
+			@deployments = @deployable_application.deployments.order(:created_at => :desc)
 		else
-			@deployments = Deployment.all
+			@deployments = Deployment.none
 		end
 	end
 

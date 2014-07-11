@@ -1,0 +1,53 @@
+@import "../variables";
+
+.feed-group{
+	margin-bottom: 30px;
+	position: relative;
+
+	$timeline_padding_space: 50px;
+	$timeline_line_width: 3px;
+	&.timeline{
+		padding: 20px 0;
+		padding-left: $timeline_padding_space * 2;
+		&:before{
+			content: "";
+			display: block;
+
+			width: $timeline_line_width;
+			background: whitesmoke;
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+
+			left: $timeline_padding_space;
+		}
+	}
+
+	.feed-element{
+		position: relative;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		
+		border-bottom: 1px solid whitesmoke;
+
+		$bullet_size: 20px;
+		.feed-bullet{
+			display: block;
+			width: $bullet_size; height: $bullet_size;
+
+			margin-top: 4px;
+
+			background: white;
+			border-radius: 50%;
+
+			box-shadow: 0px 0px 0px 3px $primary_color, 0px 0px 0px 7px white;
+
+			position: absolute;
+			left: 1px - ($timeline_padding_space + ($bullet_size / 2));
+
+			text-align: center;
+			color: $primary_color;
+		}
+	}
+}

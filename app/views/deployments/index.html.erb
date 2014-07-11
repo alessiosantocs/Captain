@@ -3,39 +3,73 @@
 	<%= sub_title "Listing all deployments" %>
 <% end %>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Repo owner</th>
-			<th>Repo name</th>
-			<th>Repo address</th>
-			<th>Public token</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<tr>
-			<td><%= @deployable_application.repo_owner %></td>
-			<td><%= @deployable_application.repo_name %></td>
-			<td><%= @deployable_application.repo %></td>
-			<td><%= @deployable_application.public_token %></td>
-		</tr>
-	</tbody>
-</table>
-
 <% if @deployments.any? %>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Deployment history</h3>
-		</div>
 
-		<div class="list-group">
-			<% @deployments.each do |deployment| %>
-				<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>" class="list-group-item">
-					<span class="badge"><%= deployment.pull_requests.count %> pull requests</span>
-					<b>Deploy #<%= deployment.id %></b> at <%= "#{deployment.created_at}" %>
-				</a>
-			<% end %>
-		</div>
+	<div class="feed-group timeline">
+		<% @deployments.each do |deployment| %>
+			<div class="feed-element">
+				<span class="feed-bullet">
+					<i class="glyphicon glyphicon-flag"></i>
+				</span>
+
+				<div class="feed-body">
+					<h4>
+						<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
+							Deploy #<%= deployment.id %> 
+						</a>
+						<%= "- #{time_ago_in_words deployment.created_at} ago" %>
+					</h4>
+
+					<div class="row">
+						<div class="col-xs-5">
+							<div>
+								<strong>Branch:</strong> <%= deployment.branch %>
+							</div>
+							<div>
+								<strong>Environment:</strong> <%= deployment.environment %>
+							</div>
+							<div>
+								<strong>Revision:</strong> <%= deployment.revision %>
+							</div>
+						</div>
+
+
+						<!-- Pull requests -->
+						<div class="col-xs-7">
+							<% if deployment.pull_requests.any? %>
+								<div>
+									<strong>Pull requests: </strong>
+								</div>
+								<% deployment.pull_requests.first(5).each do |pull_request| %>
+									<div class="small">
+										<a href="#">
+											<strong>#<%= pull_request.pid %></strong>
+										</a>
+										<%= pull_request.title %>
+									</div>
+								<% end %>
+
+								<% if deployment.pull_requests.count > 5 %>
+									<div>
+										<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
+											See other <%= deployment.pull_requests.count - 5 %> pull requests
+										</a>
+									</div>
+								<% end %>
+							<% else %>
+								<div>
+									<strong>No pull requests deployed</strong>
+								</div>
+							<% end %>
+
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		<% end %>
 	</div>
+
 <% end %>

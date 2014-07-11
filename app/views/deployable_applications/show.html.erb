@@ -24,18 +24,75 @@
 
 <% if @deployable_application.deployments.any? and latest_deployment = @deployable_application.deployments.last %>
 	<!-- The latest deploy you made -->
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Last deployment</h3>
-		</div>
+	<h4>Last deployment</h4>
 
-		<div class="list-group">
-			<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>" class="list-group-item">
-				<span class="badge"><%= latest_deployment.pull_requests.count %> pull requests</span>
-				<b>Deploy #<%= latest_deployment.id %></b> at <%= "#{latest_deployment.created_at}" %>
-			</a>
+	<div class="feed-group timeline">
+		<div class="feed-element">
+			<span class="feed-bullet">
+				<i class="glyphicon glyphicon-flag"></i>
+			</span>
+
+			<div class="feed-body">
+				<h4>
+					<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>">
+						Deploy #<%= latest_deployment.id %> 
+					</a>
+					<%= "- #{time_ago_in_words latest_deployment.created_at} ago" %>
+				</h4>
+
+				<div class="row">
+					<div class="col-xs-5">
+						<div>
+							<strong>Branch:</strong> <%= latest_deployment.branch %>
+						</div>
+						<div>
+							<strong>Environment:</strong> <%= latest_deployment.environment %>
+						</div>
+						<div>
+							<strong>Revision:</strong> <%= latest_deployment.revision %>
+						</div>
+					</div>
+
+
+					<!-- Pull requests -->
+					<div class="col-xs-7">
+						<% if latest_deployment.pull_requests.any? %>
+							<div>
+								<strong>Pull requests: </strong>
+							</div>
+							<% latest_deployment.pull_requests.first(5).each do |pull_request| %>
+								<div class="small">
+									<a href="#">
+										<strong>#<%= pull_request.pid %></strong>
+									</a>
+									<%= pull_request.title %>
+								</div>
+							<% end %>
+
+							<% if latest_deployment.pull_requests.count > 5 %>
+								<div>
+									<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>">
+										See other <%= latest_deployment.pull_requests.count - 5 %> pull requests
+									</a>
+								</div>
+							<% end %>
+						<% else %>
+							<div>
+								<strong>No pull requests deployed</strong>
+							</div>
+						<% end %>
+
+					</div>
+					
+				</div>
+				
+			</div>
+			
 		</div>
 	</div>
+
+
+
 	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
 <% elsif @deployable_application.installed  %>
 	<div class="alert alert-warning">
