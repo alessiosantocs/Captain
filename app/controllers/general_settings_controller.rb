@@ -21,7 +21,7 @@ class GeneralSettingsController < BaseController
 		end
 
 		def set_resource
-			if private_methods.select{|method_name| method_name.to_s.index(/_settings$/).nil? }.empty?
+			if private_methods.select{|method_name| method_name.to_s.index(/#{params:id]}_settings$/).nil? }.empty?
 				not_found
 			end
 		end
