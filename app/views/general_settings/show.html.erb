@@ -1,0 +1,15 @@
+<% content_for :title do %>
+	<%= title @general_settings[:title] + " settings", :wrapper_class => "" %>
+<% end %>
+
+<%= form_for '', url: "#{params[:id]}/update" do %>
+	<%= hidden_field_tag 'settings_type', 'paperwork' %>
+
+	<%= label_tag 'user[configurations][paperwork_to_mails]', 'To mails' %>
+	<%= text_field_tag 'user[configurations][paperwork_to_mails]', current_user.configurations[:paperwork_to_mails].try(:value) %><br/>
+
+	<%= label_tag 'user[configurations][paperwork_from_mail]', 'From mail' %>
+	<%= text_field_tag 'user[configurations][paperwork_from_mail]', current_user.configurations[:paperwork_from_mail].try(:value) %><br/>
+
+	<%= submit_tag "Save" %>
+<% end %>

@@ -61,10 +61,11 @@ namespace :pull_requests do
 			# Loop each pull request in the response
 			# TODO: Change this [2] behavior
 			query.values[2].each do |pull_request|
-				pid = pull_request.id
-				title = pull_request.title
-				created_on = pull_request.created_on
-				merged_on = pull_request.updated_on
+				pid 		= pull_request.id
+				title 		= pull_request.title
+				created_on 	= pull_request.created_on
+				merged_on 	= pull_request.updated_on
+				description = pull_request.description
 
 				# Lookup for an existent pull request on the database
 				db_pull_request = PullRequest.find_by_pid(pid)
@@ -76,7 +77,7 @@ namespace :pull_requests do
 				else
 					found_any = true
 					
-					app_deployment.pull_requests.create!(pid: pid, title: title, created_on: created_on, merged_on: merged_on)
+					app_deployment.pull_requests.create!(pid: pid, title: title, created_on: created_on, merged_on: merged_on, description: description)
 					puts "SUCCESS: PR => Id #{pid}, Created on #{created_on}, Merged on #{merged_on}"
 				end
 			end
@@ -85,6 +86,10 @@ namespace :pull_requests do
 
 		end while query.next.present? and query.next != "" and !forcefinish
 		# Fetch all pages of pull requests until there is no 'next' page
+
+		if user.configurations[:paperwork].try(:value) == "true"
+			PaperworkMailer.deploy_notification(app_deployment).deliver
+		end
 
 		unless found_any
 			puts "ROLLBACK: Deleting latest deployment because no pull requests where found"

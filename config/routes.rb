@@ -9,7 +9,7 @@ Deploydapp::Application.routes.draw do
 	end
 
 	# OAuth callback function
-	get '/auth/:provider/callback' => "authentications#create"
+	get '/auth/:provider/callback' => 'authentications#create'
 
 	# Authentications controller routes
 	resources :authentications
@@ -17,6 +17,10 @@ Deploydapp::Application.routes.draw do
 	# DeployableApplications controller routes
 	resources :deployable_applications do 
 		resources :deployments
+	end
+
+	resources :general_settings do
+		post 'update'
 	end
 
 	# Include api routes

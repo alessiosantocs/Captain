@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 	# He can deploy and register many applications
 	has_many :deployable_applications
 
+	has_many :configurations, as: :owner
+
 	# Signup with omniauth
 	def apply_omniauth(omniauth)
 		# Use the email provided by omniauth if the user does not have one
@@ -69,6 +71,21 @@ class User < ActiveRecord::Base
 	# A simple method to get the profile name
 	def profile_name
 		email.split("@")[0] # first_name || last_name || 
+	end
+	
+	def set_configurations(values)
+		values.each do |hash|
+			config = configurations.where(:key, hash[:key]).first
+
+			if config.nil?
+				hash[:owner_id] = self.id
+				hash[:owner_type] = self.class.to_s
+
+				configurations.create(hash)
+			else
+				config.update_attributes(value: hash[:value])
+			end
+		end
 	end
 
 

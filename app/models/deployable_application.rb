@@ -6,6 +6,8 @@ class DeployableApplication < ActiveRecord::Base
 	# Every deploy the user has made
 	has_many :deployments
 
+	has_many :configurations, as: :owner
+
 	# Properties validation
 	validates :name, uniqueness: true, presence: true
 	validates :repo, presence: true
