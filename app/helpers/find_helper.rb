@@ -1,3 +1,3 @@
 module FindHelper
-	FINDABLE_MODELS = [DeployableApplication, Deployment]
+	FINDABLE_MODELS = [DeployableApplication, Deployment, PullRequest]
 end

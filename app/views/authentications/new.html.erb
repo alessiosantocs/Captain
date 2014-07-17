@@ -1,8 +1,14 @@
-<%= title "Add a Source Control Management system" %>
+<% content_for :title do %>
+	<%= title "Add an SCM", :wrapper_class => "" %>
+	<%= sub_title "Select your service" %>
+<% end %>
 
-<%= link_to "Sign in with BitBucket", auth_url(:bitbucket), :class => "btn btn-default" %>
-
+<div class="row">
+	<div class="col-lg-3">
+		<a class="thumbnail" href="<%= auth_url(:bitbucket) %>">
+			<%= image_tag "scm-logos/bitbucket-logo.png", :class => "img-responsive", :style => "padding: 2em; width: 100%;"%>
+		</a>
+	</div>
+</div>
 <br>
-<br>
-
 <%= link_to 'Back', authentications_path %>

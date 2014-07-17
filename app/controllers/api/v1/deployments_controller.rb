@@ -1,5 +1,7 @@
 class Api::V1::DeploymentsController < Api::V1::BaseController
 
+	include ExceptionsHelper
+
 	# before_action :set_deployment, only: [:show, :edit, :update, :destroy]
 
 	# POST /deployments
@@ -7,14 +9,14 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 	def create
 		@app 				= find_deployable_application_by("public_token", params[:deployment][:deployable_application_id])
 
-		# Chech if the branch and the environment are correct, otherwise kill the request with raise Net::HTTPUnauthorized.new
+		# Chech if the branch and the environment are correct, otherwise kill the request with raise HTTPUnauthorized
 		validate_branch_and_environment(@app, params)
 
 
 		# CREATE NEW RAKE DEPLOY
-		@deployment 		= Deployment.new(deployment_params)
+		@deployment 		= @app.deployments.create!(deployment_params)
 
-		RakeInvoker.run(pull_requests: :fetch_for_app, public_token: @app.public_token, app_id: @app.id, deployment_id: @deployment.id)
+		RakeInvoker.run(pull_requests: :fetch_for_app, PUBLIC_TOKEN: @app.public_token, APP_ID: @app.id, DEPLOYMENT_ID: @deployment.id)
 
 		# @deployment.user 	= User.first
 
@@ -36,9 +38,10 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 			params.require(:deployment).permit(:branch, :environment, :revision, :repo)
 		end
 
+		# Check if deploy branch are equals to settings
 		def validate_branch_and_environment(app, params)
 			unless @app.branch == params[:deployment][:branch] && @app.environment == params[:deployment][:environment]
-				raise Net::HTTPUnauthorized
+				raise HTTPUnauthorized
 			end
 		end
 

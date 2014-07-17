@@ -53,6 +53,10 @@ $button_styles: "primary" $action_primary,
 					color: $loop_button_color;
 					background: white;
 				}
+
+				&:active, &.active{
+					box-shadow: inset 0px 3px 3px darken(white, 10%);
+				}
 			}
 		}
 

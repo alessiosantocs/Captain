@@ -1,4 +1,7 @@
-<%= title "Deployment #{@deployment.created_at}" %>
+<% content_for :title do %>
+	<%= title "Deployment ##{@deployment.id}", :wrapper_class => "" %>
+	<%= sub_title "Deployed #{time_ago_in_words @deployment.created_at} ago" %>
+<% end %>
 
 <table class="table">
 	<thead>
@@ -7,6 +10,7 @@
 			<th>Environment</th>
 			<th>Branch</th>
 			<th>Revision</th>
+			<th>Deployed at</th>
 		</tr>
 	</thead>
 
@@ -16,6 +20,7 @@
 			<td><%= @deployment.environment %></td>
 			<td><%= @deployment.branch %></td>
 			<td><%= @deployment.revision %></td>
+			<td><%= @deployment.created_at %></td>
 		</tr>
 	</tbody>
 </table>

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/alessiosantocs/bitbucket.git
-  revision: 6e05aecc31cff5281ba8252a4800c48caa11e662
+  revision: a9ae5d9701710e9946fa5a3ee301f3aa60036caf
   branch: pull_requests_api
   specs:
     bitbucket_rest_api (0.1.5)

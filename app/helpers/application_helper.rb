@@ -110,4 +110,28 @@ module ApplicationHelper
 		end
 	# =======
 
+	# Used to display the alert containing the errors of a form
+	def display_errors!(resource)
+		response = ""
+		if resource.errors.any?
+			response = content_tag :div, :class => "alert alert-danger" do 
+				content = []
+				
+				content[0] = content_tag :p, :class => "text" do
+					"Houston, we got a problem..."
+				end
+
+				content[1] = content_tag :ul do
+					errors_list = resource.errors.full_messages.map do |msg|
+						content_tag :li, msg
+					end
+
+					raw errors_list.join
+				end
+
+				raw content.join
+			end
+		end
+	end
+
 end

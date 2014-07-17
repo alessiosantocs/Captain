@@ -1,4 +1,7 @@
-<%= title "##{@pull_request.pid} #{@pull_request.title}" %>
+<% content_for :title do %>
+	<%= title "Pull request ##{@pull_request.pid}", :wrapper_class => "" %>
+	<%= sub_title "#{@pull_request.title}" %>
+<% end %>
 
 <table class="table">
 	<thead>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Deploydapp</title>
+  <title>Captain - Effortless deployment tracking</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,6 +10,26 @@
 
 	<!-- SIGNIN/SIGNOUT -->
 	<%= render :partial => "partials/navbar" %>
+
+	<!-- NOTICE/ALERT -->
+	<div class="application_alerts">
+		<% if notice %>
+			<div class="alert alert-success">
+				<div class="container">
+					<%= notice %>
+				</div>
+			</div>
+		<% end %>
+		<% if alert %>
+			<div class="alert alert-danger">
+				<div class="container">
+					<%= alert %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+
 
 	<!-- Title of the page section -->
 	<% if (yield :title).present? %>
@@ -36,12 +56,13 @@
 	<% end %>
 
 	<br>
+
+	<% if controller_is?([:"devise/sessions", :"devise/registrations"]) %>
+		<h1 class="typo-brand-strong brand-logo">Captain</h1>
+	<% end %>
+
 	<!-- THE CONTENT -->
 	<div class="container">
-		<!-- NOTICE/ALERT -->
-		<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
-		<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
-
 		<%= yield %>
 	</div>
 

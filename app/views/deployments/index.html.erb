@@ -1,5 +1,6 @@
-<%= title do %>
-	Listing deployments <% if @deployable_application.present? %> For <%= @deployable_application.name %><% end %>
+<% content_for :title do %>
+	<%= title "#{@deployable_application.name} deployments", :wrapper_class => "" %>
+	<%= sub_title "Listing all deployments" %>
 <% end %>
 
 <table class="table">

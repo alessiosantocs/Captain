@@ -1,14 +1,24 @@
 <html>
 <head>
-	<title>Deployd website</title>
+	<title>Captain - Deployments tracking</title>
 	<script data-main="js/main" src="js/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WR3262"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WR3262');</script>
+	<!-- End Google Tag Manager -->
 
 	<!-- THE SITE HEADER -->
-	<header class="navbar navbar-static-top da-navbar" id="top" role="banner">
+	<header class="navbar navbar-fixed-top da-navbar" id="top" role="banner">
 		<div class="container">
 			<div class="navbar-header">
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -17,15 +27,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="../" class="navbar-brand">Deployd App</a>
+				<a href="#captain" class="navbar-brand">Captain</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="#features">Features</a>
+						<a href="#captain-what">Captain what?</a>
 					</li>
 					<li>
-						<a href="https://github.com/alessiosantocs/deploydapp">Contribute</a>
+						<a href="#captain-how">How does it work?</a>
+					</li>
+					<li>
+						<a href="#captain-features">Features</a>
+					</li>
+					<li>
+						<a href="#captain-beta">Contribute</a>
+						<!-- <a href="https://github.com/alessiosantocs/deploydapp">Contribute</a> -->
 					</li>
 				</ul>
 			</nav>
@@ -33,117 +50,188 @@
 	</header>
 
 	<!-- THE MAIN BLOCK - WITH CTA -->
-	<section class="da-row-container da-row-inverse text-center da-row-main">
+	<section class="da-row-container da-row-inverse text-center da-row-main" id="captain">
 		<div class="container">
 			<div class="hero-unit">
-				<h1>Keep track of all your deployments <br>without any effort</h1>
+				<h1>Keep track of your deployments</h1>
+				<p class="lead">All of them, without any effort</p>
 				<div class="btn-group">
-					<a href="#" class="btn btn-lg btn-primary btn-outline-inverse">Discover how</a>
+					<a href="#captain-what" class="btn btn-lg btn-primary btn-outline-inverse">Discover Captain</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- THE PROBLEM BLOCK -->
-	<section class="da-row-container text-left">
+	<section class="text-left section-size-5" id="captain-what">
 		<div class="container"><!-- da-image-right -->
-			<div class="hero-unit da-hero-secondary">
-				<div class="row">
-					<div class="col-lg-6">
-						<h2>An ever lasting memory of your deployments</h2>
-						<p class="lead">
-							
-						</p>
-					</div>
-
-					<div class="col-lg-6">
-						<img src="images/flatui-demopack/ui-pack_145.png">
-						<img src="images/flatui-demopack/ui-pack_189.png">
-					</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<h3>What's <span class="typo-brand-strong">Captain</span>?</h3>
+					<p class="lead">
+						It's an ever lasting memory of all your web application's releases.
+					</p>
+					<p class="lead">
+						It has lots of different tools that will help you analyze your deployments history.
+					</p>
 				</div>
 
+				<div class="col-lg-6">
+					<img src="images/flatui-demopack/ui-pack_189.png" class="img-responsive floating-ghost-animation">
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- THE SOLUTION BLOCK -->
-	<section class="da-row-container text-left da-row-default">
+	<section class="text-left section-default section-size-5" id="captain-how">
 		<div class="container">
-			<div class="hero-unit da-hero-secondary">
-				<div class="row">
-					<div class="col-lg-6">
-						<img src="images/flatui-demopack/ui-pack_21.png">
-						<img src="images/flatui-demopack/ui-pack_95.png">
-					</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<img src="images/flatui-demopack/ui-pack_271.png" class="img-responsive oscillation-animation">
+				</div>
 
-					<div class="col-lg-6">
-						<p class="lead">Focus on your code and don't worry about things like that anymore.</p>
-						<p class="lead">We track and manage your deployments and all that derives automatically.</p>
-						<p class="lead">We put everything in one place, finally.</p>
-					</div>
+				<div class="col-lg-6">
+					<h3>How does it work?</h3>
+					<p class="lead">
+						Captain is a combination of a simple but effective gem, plus a centralized Data Management System.
+					</p>
+					<p class="lead">
+						It seamlessly integrates into your application's routines and gather data in background.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- SET OF FEATURES -->
-	<section class="da-row-container text-center da-row-default">
+	<section class="section-default section-size-3" id="captain-features">
 		<div class="container">
-			<div class="hero-unit da-hero-secondary">
-				<h2 class="bs-docs-featurette-title">Must have features</h2>
-				<p class="lead">What makes Deployd App a must have for your application's environment.</p>
+			<div class="text-center">
+				<h2>
+					Trust your <span class="typo-brand-strong">Captain</span>
+				</h2>
+				<p class="lead">
+					Here's what it's all about. Super features for your awesome crew!
+				</p>
+			</div>
+
+			<hr class="half-rule">
+
+			<!-- Smarteploy -->
+<!-- 				
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="images/flatui-demopack/ui-pack_63.png" alt="Components" class="img-responsive">
+				</div>
+				<div class="col-sm-9">
+					<h3>Smarteploy</h3>
+					<p class="lead">
+						is an awesome tool that will help you understand how to improve your deployment procedure.
+					</p>
+					<p class="text">
+						It'll give you detailed insights and numbers to let you know where the bottleneck is. With its smart suggestions you will certainly move faster.
+					</p>
+				</div>
+			</div>
 
 				<hr class="half-rule">
-
-				<div class="row">
-					<div class="col-sm-4">
-						<img src="images/flatui-demopack/ui-pack_19.png" alt="Sass and Less support" class="img-responsive">
-						<h3>Deploy configuration</h3>
-						<p class="text">In addition to vanilla CSS, Bootstrap includes support for the two most popular CSS preprocessors, <a href="../css/#less">Less</a> and <a href="../css/#sass">Sass</a>.</p>
-					</div>
-					<div class="col-sm-4">
-						<img src="images/flatui-demopack/ui-pack_25.png" alt="Responsive across devices" class="img-responsive">
-						<h3>Team email</h3>
-						<p class="text">Bootstrap easily and efficiently scales your project with one code base, from phones to tablets to desktops.</p>
-					</div>
-					<div class="col-sm-4">
-						<img src="images/flatui-demopack/ui-pack_151.png" alt="Components" class="img-responsive">
-						<h3>Improve your team</h3>
-						<p class="text">With Bootstrap, you get extensive and beautiful documentation with hundreds of live examples, code snippets, and more.</p>
-					</div>
+-->
+			<!-- Magix Auto -->
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="images/flatui-demopack/ui-pack_57.png" alt="Sass and Less support" class="img-responsive">
 				</div>
-
+				<div class="col-sm-9">
+					<h3>Magix Auto</h3>
+					<p class="lead">
+						is a powerful custom syntax you'll learn to use in your pull requests, commits and issues.
+					</p>
+					<p class="text">
+						With the right amount of data it'll come out with a wonderful and automated changelog of your application.
+					</p>
+				</div>
 			</div>
+
+			<hr class="half-rule">
+
+			<!-- Paperwork -->
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="images/flatui-demopack/ui-pack_25.png" alt="Sass and Less support" class="img-responsive">
+				</div>
+				<div class="col-sm-9">
+					<h3>Paperwork</h3>
+					<p class="lead">
+						is an awesome, totally customizable and automated newsletter that will keep your crew always up-to-date.
+					</p>
+					<p class="text">
+						Customized messages and email layouts. Deployment's report and changelog. Feedback requests and a lot more coming.
+					</p>
+				</div>
+			</div>
+
+			<hr class="half-rule">
+
+			<!-- Time Machine -->
+			<div class="row">
+				<div class="col-sm-3">
+					<img src="images/flatui-demopack/ui-pack_185.png" alt="Sass and Less support" class="img-responsive">
+				</div>
+				<div class="col-sm-9">
+					<h3>Time Machine</h3>
+					<p class="lead">
+						is a simple but effective time capsule lifeline for your application's deployments.
+					</p>
+					<p class="text">
+						Manage rollbacks, tags and releases in a snap. Always know what you added and what you removed. It's simply awesome!
+					</p>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
 	<!-- SET OF FEATURES -->
-	<section class="da-row-container da-row-inverse">
-		<div class="container">
-			<div class="hero-unit da-hero-secondary">
+	<section class="section-primary window-sized" id="captain-beta">
+		<div class="vertically-aligned">
+
+			<div class="container">
 				<h2 class="bs-docs-featurette-title">Build it with us</h2>
 				<p class="lead">
-					Help us building a super product, we would love to get you onboard and hear what you have to say.
+					We are currently working on our Alpha version of both the application and the gem. We are a very small team of two friendly geeks.
+				</p>
+				<p class="lead">
+					If you are a developer, a geek or a smart guy you can help us build a super product. We would love to get you onboard and hear what you have to say.
 				</p>
 
-				<div class="row">
-					<form>
-						<div class="col-sm-9">
-							<input type="email" autocomplete="off" name="email" placeholder="Enter your email here" class="form-control input-lg">
+				<form id="CaptainEmailForm" action="https://docs.google.com/a/pazienti.org/forms/d/1KPqY080Lz4pteKKt77DPDD2ZCaB6FgW644CLs2rsFCw/formResponse" method="POST">
+					<fieldset class="da-form-fieldset">
+						<div class="row">
+							<div class="col-sm-9">
+								<input type="email" autocomplete="off" name="entry.402878485" placeholder="Leave us your email here..." class="form-control input-lg">
+							</div>
+							<div class="col-sm-3">
+								<button class="btn btn-primary btn-lg btn-primary btn-outline-inverse">
+									I'm absolutely in!
+								</button>
+							</div>
 						</div>
-						<div class="col-sm-3">
-							<button class="btn btn-primary btn-lg btn-primary btn-outline-inverse">Send me updates</button>
-						</div>
-					</form>
-				</div>
+					</fieldset>
+
+					<p class="text da-form-success-message">
+						Thanks for your awesome support! We'll get in touch soon.
+					</p>
+				</form>
+
+				<p class="text">Made with <i class="glyphicon glyphicon-heart"></i> in Milan by <strong>Ale</strong> and <strong>Sal</strong></p>
+
 			</div>
+			
 		</div>
+
 	</section>
-<!-- 	<footer class="da-footer">
-		<div class="container">
-			<p>Made with love by </p>
-		</div>
-	</footer>
- -->
+
+
 </body>
 </html>

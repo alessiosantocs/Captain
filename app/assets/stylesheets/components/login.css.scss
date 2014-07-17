@@ -1,5 +1,69 @@
-body.devise_registrations{
+@import "da-css/variables";
+body.devise_registrations, body.devise_sessions{
+	// Put a strong background
+	background: $primary_color;
+
+	// Hide application's alert
+	.application_alerts{
+		display: none;
+	}
+
+	// Hide navbar
 	#app_main_navigation{
 		display: none;
+	}
+
+	// Center the brand logo
+	.brand-logo{
+		text-align: center;
+		color: white;
+		margin-bottom: 20px;
+	}
+
+	// Make the container smaller
+	.container{
+		position: relative;
+		background: white;
+		max-width: 400px;
+
+		border-radius: 3px;
+
+		// Make a smaller page header
+		.page-header{
+			margin: 0;
+			padding: 0;
+
+			margin-bottom: 20px;
+
+			h1{
+				font-size: 20px;
+				margin: 10px 0px;
+			}
+
+		}
+
+		// Make all inputs 100% large
+		.form{
+			.col-lg-10{
+				width: 100%;
+			}
+		}
+
+		// Put links the bottom
+		.devise-links{
+			position: absolute;
+			left: 0;
+			margin-top: 10px;
+
+			a{
+				color: $weak_color;
+
+				&:not(:last-child):after{
+					content: "-";
+					color: white;
+					margin-left: 5px;
+				}
+			}
+		}
 	}
 }

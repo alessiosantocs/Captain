@@ -1,8 +1,8 @@
 module DeployableApplicationsHelper
-	def possible_repos
+	def possible_repos(c_user)
 
-		user = current_user.authentications.first.uid
+		user = c_user.authentications.first.uid
 
-		current_user.scm_client.repos.list.map { |repo| "https://#{user}@bitbucket.org/#{repo.owner}/#{repo.name}.git" }
+		c_user.scm_client.repos.list.map { |repo| ["#{repo.name}.git", "https://#{user}@bitbucket.org/#{repo.owner}/#{repo.name}.git"] }
 	end
 end
