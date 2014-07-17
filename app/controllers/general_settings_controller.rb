@@ -18,6 +18,8 @@ class GeneralSettingsController < BaseController
 			configurations = configurations.map_pair{|key, value| {key: key, value: value}}
 
 			configurations = @user.set_configurations(configurations)
+
+			redirect_to :back, notice: 'Updated successfully'
 		end
 
 		def set_resource

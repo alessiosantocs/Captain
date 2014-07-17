@@ -1,4 +1,5 @@
-<% @deploy.pull_requests do |pull_request| %>
+<% @deploy.pull_requests.each do |pull_request| %>
 	<p><%= pull_request.title %><p>
 	<p><%= pull_request.description %><p>
+	<br/><br/>
 <% end %>

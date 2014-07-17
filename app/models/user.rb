@@ -44,7 +44,6 @@ class User < ActiveRecord::Base
 
 	# Right now it is only bitbucket 
 	def scm_client
-
 		uid = authentications.first.uid
 		token = authentications.first.access_token
 		secret = authentications.first.token_secret

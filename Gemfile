@@ -69,6 +69,8 @@ end
 		gem "better_errors"
 		# And let me inspect them
 		gem "binding_of_caller"
+		# Local mailer test
+		gem 'letter_opener'
 	end
 
 #=================================================================

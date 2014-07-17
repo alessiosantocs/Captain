@@ -87,7 +87,7 @@ namespace :pull_requests do
 		end while query.next.present? and query.next != "" and !forcefinish
 		# Fetch all pages of pull requests until there is no 'next' page
 
-		if user.configurations[:paperwork].try(:value) == "true"
+		if user.configurations[:paperwork_to_mails].try(:value).to_nil.present?
 			PaperworkMailer.deploy_notification(app_deployment).deliver
 		end
 
