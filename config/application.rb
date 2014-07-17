@@ -21,5 +21,8 @@ module Deploydapp
     # config.i18n.default_locale = :de
 
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+    # Serve assets in production
+    config.serve_static_assets = true
   end
 end
