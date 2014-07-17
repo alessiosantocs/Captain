@@ -1,5 +1,7 @@
 class Api::V1::DeploymentsController < Api::V1::BaseController
 
+	include ExceptionsHelper
+
 	# before_action :set_deployment, only: [:show, :edit, :update, :destroy]
 
 	# POST /deployments
@@ -7,7 +9,7 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 	def create
 		@app 				= find_deployable_application_by("public_token", params[:deployment][:deployable_application_id])
 
-		# Chech if the branch and the environment are correct, otherwise kill the request with raise Net::HTTPUnauthorized.new
+		# Chech if the branch and the environment are correct, otherwise kill the request with raise HTTPUnauthorized
 		validate_branch_and_environment(@app, params)
 
 
@@ -39,7 +41,7 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 		# Check if deploy branch are equals to settings
 		def validate_branch_and_environment(app, params)
 			unless @app.branch == params[:deployment][:branch] && @app.environment == params[:deployment][:environment]
-				raise Net::HTTPUnauthorized
+				raise HTTPUnauthorized
 			end
 		end
 
