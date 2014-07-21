@@ -10,8 +10,18 @@
 
 body{
 	padding-top: 50px;
+	font-family: $font_brand_weak;
 }
 
+#captain{
+	position: relative;
+	background-image: url(../images/resources/captain-character-02.png), url(../images/resources/background-pattern.png);
+	background-size: 59%, 422px;
+	background-position: left center;
+	background-repeat: no-repeat, repeat;
+
+	-webkit-animation: background-moving 20s linear infinite;
+}
 
 .vertically-aligned{
 	width: 100%;

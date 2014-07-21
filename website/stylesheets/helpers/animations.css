@@ -18,6 +18,13 @@
   to {
     -webkit-transform: rotate(-2deg); } }
 
+@-webkit-keyframes background-moving {
+  from {
+    background-position: left center, 0px; }
+
+  to {
+    background-position: left center, 422px; } }
+
 .floating-ghost-animation {
   -webkit-animation: floating-ghost 4s ease infinite; }
 

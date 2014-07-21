@@ -15,7 +15,6 @@
 /*Row containers*/
 .da-row-container.da-row-main {
   padding: 250px 0px;
-  background-image: url(../images/resources/top-part.png), url(../images/resources/bottom-part.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center, bottom center; }
@@ -27,7 +26,7 @@
 .da-row-container.da-row-cta {
   background: #eee; }
 .da-row-container.da-row-inverse {
-  background-color: #1d6fb7;
+  background-color: #0b89ce;
   color: #fff; }
 .da-row-container.da-row-size1 {
   padding: 50px 0px; }

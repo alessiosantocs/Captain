@@ -19,6 +19,13 @@
   to {
     -webkit-transform: rotate(-2deg); } }
 
+@-webkit-keyframes background-moving {
+  from {
+    background-position: left center, 0px; }
+
+  to {
+    background-position: left center, 422px; } }
+
 .floating-ghost-animation {
   -webkit-animation: floating-ghost 4s ease infinite; }
 
@@ -206,7 +213,6 @@
 /*Row containers*/
 .da-row-container.da-row-main {
   padding: 250px 0px;
-  background-image: url(../images/resources/top-part.png), url(../images/resources/bottom-part.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center, bottom center; }
@@ -218,7 +224,7 @@
 .da-row-container.da-row-cta {
   background: #eee; }
 .da-row-container.da-row-inverse {
-  background-color: #1d6fb7;
+  background-color: #0b89ce;
   color: #fff; }
 .da-row-container.da-row-size1 {
   padding: 50px 0px; }
@@ -282,7 +288,7 @@ h6 {
   font-family: "Courgette", cursive; }
 
 .typo-brand-weak {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial; }
 
 .text-primary {
   color: #1d6fb7; }
@@ -303,7 +309,7 @@ h6 {
   color: #5cb85c; }
 
 p {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial; }
   p.text {
     font-size: 19px; }
   p.lead {
@@ -313,7 +319,16 @@ p {
         font-size: 26px; } }
 
 body {
-  padding-top: 50px; }
+  padding-top: 50px;
+  font-family: "Helvetica", Arial; }
+
+#captain {
+  position: relative;
+  background-image: url(../images/resources/captain-character-02.png), url(../images/resources/background-pattern.png);
+  background-size: 59%, 422px;
+  background-position: left center;
+  background-repeat: no-repeat, repeat;
+  -webkit-animation: background-moving 20s linear infinite; }
 
 .vertically-aligned {
   width: 100%; }

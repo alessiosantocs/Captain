@@ -20,7 +20,7 @@ h6 {
   font-family: "Courgette", cursive; }
 
 .typo-brand-weak {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial; }
 
 .text-primary {
   color: #1d6fb7; }
@@ -41,7 +41,7 @@ h6 {
   color: #5cb85c; }
 
 p {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial; }
   p.text {
     font-size: 19px; }
   p.lead {
