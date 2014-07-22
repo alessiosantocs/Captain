@@ -13,11 +13,9 @@ require(["lib/jquery.min"], function (jquery) {
 				return false;
 			});
 
-			!function ($) {
-			    $(function(){
-			      window.prettyPrint && prettyPrint()
-			    })
-			  }(window.jQuery)
+			window.setTimeout(function () {
+				window.prettyPrint && prettyPrint()
+			}, 500)
 		});
 
 		$("#CaptainEmailForm").submit(function (event) {
@@ -31,5 +29,7 @@ require(["lib/jquery.min"], function (jquery) {
 			form.addClass("success");
 		});
 	});
+
+
 
 });
