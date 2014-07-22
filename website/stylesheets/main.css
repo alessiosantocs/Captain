@@ -384,3 +384,6 @@ body {
   display: none; }
 #CaptainEmailForm.success .da-form-success-message {
   display: block; }
+
+.da-code-example {
+  height: 250px; }

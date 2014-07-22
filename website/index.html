@@ -3,6 +3,7 @@
 	<title>Captain - Deployments tracking</title>
 	<script data-main="js/main" src="js/require.js"></script>
 	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/prettify.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
@@ -55,7 +56,7 @@
 			<div class="row">
 				<div class="col-sm-offset-5 col-sm-7">
 					<h1>Your app's new best friend</h1>
-					<p class="lead">What's happening to your app at any moment</p>
+					<p class="lead">Know what happens to your app at any moment</p>
 					<div class="btn-group">
 						<a href="#captain-what" class="btn btn-lg btn-success">Meet Captain</a>
 					</div>
@@ -65,21 +66,22 @@
 	</section>
 
 	<!-- THE PROBLEM BLOCK -->
-	<section class="text-left section-size-5" id="captain-what">
+	<section class="section-size-5" id="captain-what">
 		<div class="container"><!-- da-image-right -->
 			<div class="row">
 				<div class="col-lg-6">
 					<h3>What's <span class="typo-brand-strong">Captain</span>?</h3>
 					<p class="lead">
-						It's an ever lasting memory of all your web application's releases.
+						It's an ever lasting memory of all your <br>web application's releases.
 					</p>
 					<p class="lead">
-						It has lots of different tools that will help you analyze your deployments history.
+						It integrates with your app in a snap and <br>keeps track of all your deployments.
 					</p>
 				</div>
 
 				<div class="col-lg-6">
-					<img src="images/flatui-demopack/ui-pack_189.png" class="img-responsive floating-ghost-animation">
+					<!-- <img src="images/flatui-demopack/ui-pack_189.png" class="img-responsive floating-ghost-animation"> -->
+					<pre class="da-code-example prettyprint">gem 'captain-rails'</pre>
 				</div>
 			</div>
 		</div>

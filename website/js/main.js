@@ -1,5 +1,5 @@
 require(["lib/jquery.min"], function (jquery) {
-	require(["lib/bootstrap.min", "lib/vertical-align", "lib/window-sized", "lib/jquery.scrollTo.min"]);
+	require(["lib/bootstrap.min", "lib/vertical-align", "lib/window-sized", "lib/jquery.scrollTo.min", "lib/prettify"]);
 
 	$(document).ready(function () {
 		// ACTUAL CODE
@@ -12,6 +12,12 @@ require(["lib/jquery.min"], function (jquery) {
 				});
 				return false;
 			});
+
+			!function ($) {
+			    $(function(){
+			      window.prettyPrint && prettyPrint()
+			    })
+			  }(window.jQuery)
 		});
 
 		$("#CaptainEmailForm").submit(function (event) {
