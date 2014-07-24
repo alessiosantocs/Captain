@@ -5,12 +5,16 @@ require(["lib/jquery.min"], function (jquery) {
 		// ACTUAL CODE
 
 		$(document).ready(function () {
-			$('a').click(function(){
+			$('a').click(function(event){
+				event.preventDefault();
+
 				var href = $.attr(this, 'href');
-				$.scrollTo($(href), 500, function () {
-					window.location.hash = href;
+				$.scrollTo($(href), 1000, {
+					onAfter: function () {
+						// window.location.hash = href;
+					},
+					offset: -50
 				});
-				return false;
 			});
 
 			window.setTimeout(function () {
