@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Courgette);
+@import "lib/animate.css";
 
 @import "variables";
 @import "helpers/animations";
@@ -7,6 +8,8 @@
 @import "components/row_container";
 @import "components/forms";
 @import "components/typography";
+
+@import "specifications/scenes";
 
 body{
 	padding-top: 50px;
@@ -119,4 +122,24 @@ margin: 40px auto;
 
 .da-code-example{
 	height: 250px;
+}
+
+
+.well{
+	background: #eee;
+
+	border: none;
+
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.framescene{
+	position: relative;
+	overflow: hidden;
+}
+
+.justhide{
+	visibility: hidden;
 }

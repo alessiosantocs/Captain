@@ -1,0 +1,15 @@
+.timeline-scene{
+	background: url(../images/resources/timeline-base.png) no-repeat;
+	background-position: center 97%;
+
+	.framescene{
+		padding: 15px;
+	}
+
+	.timeline-feed{
+		margin-top: 10px; 
+		margin-bottom: 10px;
+		position: relative;
+		left: -1px;
+	}
+}
