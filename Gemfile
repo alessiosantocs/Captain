@@ -44,6 +44,9 @@ gem 'simple_form'
 	# Using devise to make the user able to login/signup
 	gem 'devise', '~> 3.0.4'
 
+	# Using cancan to manage login authorization
+	gem 'cancan'
+
 #=================================================================
 
 # FOR DEPLOYMENTS MODEL ==========================================

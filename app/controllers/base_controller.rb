@@ -1,3 +1,4 @@
+
 class BaseController < ApplicationController
 	include ApplicationHelper
 	include RedirectsHelper
@@ -8,4 +9,5 @@ class BaseController < ApplicationController
 	protect_from_forgery with: :exception
 
 	before_filter :handle_automated_redirects
+
 end
