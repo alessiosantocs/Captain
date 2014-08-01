@@ -11,6 +11,7 @@
 			<th>Branch</th>
 			<th>Revision</th>
 			<th>Deployed at</th>
+			<th></th>
 		</tr>
 	</thead>
 
@@ -21,6 +22,11 @@
 			<td><%= @deployment.branch %></td>
 			<td><%= @deployment.revision %></td>
 			<td><%= @deployment.created_at %></td>
+			<td>
+				<%= link_to deployment_url(@deployment, :public_token => @deployable_application.public_token), :target => :blank do %>
+					<i class="glyphicon glyphicon-new-window"></i> Public link
+				<% end %>
+			</td>
 		</tr>
 	</tbody>
 </table>

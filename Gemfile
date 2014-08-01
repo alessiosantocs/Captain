@@ -34,6 +34,8 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Using simple_form to create rails form
 gem 'simple_form'
 
+# Using bluecloth for render markdown descriptions
+gem 'bluecloth'
 
 # FOR USERS ======================================================
 
@@ -45,8 +47,8 @@ gem 'simple_form'
 	gem 'devise', '~> 3.0.4'
 
 	# Using cancan to manage login authorization
-	gem 'cancan'
-
+	gem "cancan", :git => "git://github.com/alessiosantocs/cancan.git", :branch => "2.1"
+	
 #=================================================================
 
 # FOR DEPLOYMENTS MODEL ==========================================

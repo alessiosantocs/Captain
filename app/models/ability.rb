@@ -2,16 +2,24 @@ class Ability
 
 	include CanCan::Ability
 	
-	def initialize(user)
+	def initialize(user, params)
 		# Define abilities for the passed in user here. For example:
-		
-		user ||= User.new # guest user (not logged in)
-		if user.admin?
-			can :manage, :all
+
+		if user.present?
+			can :read, :all
+			can :update, :all
+			can :create, :all
+			can :destroy, :all
 		else
-			can :read, DeployableApplications
+		# If not logged in
+			# Check if the user passed a token in
+			if DeployableApplication.find_by_public_token(params[:public_token]).present?
+				can :read, :deployable_applications 
+				can :read, :deployments
+			end
 		end
 
+		# user ||= User.new # guest user (not logged in)
 		# The first argument to `can` is the action you are giving the user 
 		# permission to do.
 		# If you pass :manage it will apply to every action. Other common actions

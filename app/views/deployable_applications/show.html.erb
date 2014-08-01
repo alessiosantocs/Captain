@@ -30,13 +30,13 @@
 		</div>
 
 		<div class="list-group">
-			<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>" class="list-group-item">
+			<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment, :public_token => params[:public_token]) %>" class="list-group-item">
 				<span class="badge"><%= latest_deployment.pull_requests.count %> pull requests</span>
 				<b>Deploy #<%= latest_deployment.id %></b> at <%= "#{latest_deployment.created_at}" %>
 			</a>
 		</div>
 	</div>
-	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
+	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application, :public_token => params[:public_token]) %>
 <% elsif @deployable_application.installed  %>
 	<div class="alert alert-warning">
 		You have no deployments yet. Go <strong><i>cap production deploy</i></strong><%=  %> your application...

@@ -12,6 +12,13 @@ GIT
       simple_oauth
 
 GIT
+  remote: git://github.com/alessiosantocs/cancan.git
+  revision: 5f1925e289998514de0ebcb3bc9925c286f89b92
+  branch: 2.1
+  specs:
+    cancan (2.0.0.alpha)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: feb28d576cdcf3bf9fc6ff4ab206286adf56c68c
   branch: bootstrap3
@@ -61,8 +68,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bluecloth (2.2.0)
     builder (3.1.4)
-    cancan (1.6.10)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -214,7 +221,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bitbucket_rest_api!
-  cancan
+  bluecloth
+  cancan!
   coffee-rails (~> 4.0.0)
   devise (~> 3.0.4)
   jbuilder (~> 1.2)
