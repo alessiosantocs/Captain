@@ -1,6 +1,6 @@
 class DeploymentsController < BaseController
 	# must be logged in
-	before_filter :authenticate_user!, :scm_associate_user!
+	before_filter :scm_associate_user!
 
 	before_action :set_deployable_application, only: [:show, :edit, :update, :destroy]
 
@@ -78,7 +78,10 @@ class DeploymentsController < BaseController
 		def set_deployable_application
 			if deployable_application_id = params[:deployable_application_id]
 				@deployable_application = DeployableApplication.find_by_id(deployable_application_id)
+			else
+				@deployable_application = Deployment.find_by_id(params[:id]).deployable_application
 			end
+
 		end
 		# Use callbacks to share common setup or constraints between actions.
 		# def set_deployment

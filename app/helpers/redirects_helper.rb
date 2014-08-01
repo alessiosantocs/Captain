@@ -7,13 +7,13 @@ module RedirectsHelper
 	def handle_automated_redirects
 		# No current user methods here
 
-		authenticate_user!
+		# authenticate_user!
 		# Current user required here
-		# if current_user.present?
-		handle_no_authentication_redirect
-		handle_no_deployable_application_redirect
-		handle_force_single_application_management_redirect
-		# end
+		if current_user.present?
+			handle_no_authentication_redirect
+			handle_no_deployable_application_redirect
+			handle_force_single_application_management_redirect
+		end
 	end
 
 	# No authentication? get one

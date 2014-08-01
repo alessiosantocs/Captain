@@ -31,7 +31,7 @@
 
 		<div class="list-group">
 			<% @deployments.each do |deployment| %>
-				<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>" class="list-group-item">
+				<a href="<%= deployable_application_deployment_url(@deployable_application, deployment, :public_token => params[:public_token]) %>" class="list-group-item">
 					<span class="badge"><%= deployment.pull_requests.count %> pull requests</span>
 					<b>Deploy #<%= deployment.id %></b> at <%= "#{deployment.created_at}" %>
 				</a>
