@@ -1,0 +1,32 @@
+.feed-group {
+  margin-bottom: 30px;
+  position: relative; }
+  .feed-group.timeline {
+    padding: 20px 0;
+    padding-left: 100px; }
+    .feed-group.timeline:before {
+      content: "";
+      display: block;
+      width: 3px;
+      background: whitesmoke;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50px; }
+  .feed-group .feed-element {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid whitesmoke; }
+    .feed-group .feed-element .feed-bullet {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0px 0px 0px 3px #1d6fb7, 0px 0px 0px 7px white;
+      position: absolute;
+      left: -59px;
+      text-align: center;
+      color: #1d6fb7; }
