@@ -20,10 +20,10 @@ class BaseController < ApplicationController
 
 	# Fallbacks
 	rescue_from ActiveRecord::RecordNotFound, with: :not_found
+	# rescue_from Faraday::ConnectionFailed, with: :return_nil	# => Connection failed, probably in local environment
 
 	private
 		def not_found
 			redirect_to :root, alert: "Nothing like that has been found" and return
 		end
-
 end

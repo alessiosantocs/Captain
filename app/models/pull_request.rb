@@ -10,14 +10,17 @@ class PullRequest < ActiveRecord::Base
 		unless var_additional_info.present?
 			user = deployment.deployable_application.user
 			client = user.scm_client
-			var_additional_info = client.pull_requests.get(deployment.deployable_application.repo_owner, deployment.deployable_application.repo_name, pid)
-			puts "FUCK"
+
+			unless Rails.env.development?
+				var_additional_info = client.pull_requests.get(deployment.deployable_application.repo_owner, deployment.deployable_application.repo_name, pid)
+			end
+
 		end
 
 		result = var_additional_info
 	end
 
 	def author
-		additional_info.author
+		additional_info.try :author
 	end
 end

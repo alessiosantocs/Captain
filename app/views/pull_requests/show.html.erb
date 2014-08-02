@@ -18,13 +18,23 @@
 			<td><%= @deployment.created_at %></td>
 			<td><%= @deployment.environment %></td>
 			<td><%= @deployment.branch %></td>
-			<td><%= link_to @pull_request.author[:display_name], @pull_request.author[:links][:self][:href] %></td>
+			<td>
+				<% if @pull_request.author.present? %>
+					<%= link_to @pull_request.author[:display_name], @pull_request.author[:links][:self][:href] %>
+				<% end %>
+			</td>
 		</tr>
 	</tbody>
 
 </table>
 
-<div class="well">
-	<%= BlueCloth.new(@pull_request.additional_info.description).to_html.html_safe %>
-	<%#= @pull_request.additional_info[:links][:diff][:href] %>
-</div>
+<% if @pull_request.additional_info.present? %>
+	<div class="well">
+		<%= BlueCloth.new(@pull_request.additional_info.description).to_html.html_safe %>
+		<%#= @pull_request.additional_info[:links][:diff][:href] %>
+	</div>
+<% else %>
+	<div class="alert alert-warning">
+		No additional info present
+	</div>
+<% end %>
