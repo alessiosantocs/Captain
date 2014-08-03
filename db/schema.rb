@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524102850) do
+ActiveRecord::Schema.define(version: 20140803122227) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20140524102850) do
     t.integer  "deployable_application_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
   end
 
   create_table "pull_requests", force: true do |t|

@@ -67,11 +67,11 @@ module ApplicationHelper
 	# A simple function to generate an html subtitle that should be positioned under the title
 		def sub_title(value="", options={})
 			if block_given?
-				content_tag :p, :class => "lead" do
+				content_tag :p, :class => "text" do
 					yield
 				end
 			else
-				content_tag(:p, value, :class => "lead")
+				content_tag(:p, value, :class => "text")
 			end
 		end
 	# =======
@@ -131,6 +131,13 @@ module ApplicationHelper
 
 				raw content.join
 			end
+		end
+	end
+
+
+	def generate_header_cover(url)
+		content_for :header_cover do
+			image_tag url
 		end
 	end
 

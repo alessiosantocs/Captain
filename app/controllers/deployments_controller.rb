@@ -95,6 +95,6 @@ class DeploymentsController < BaseController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployment_params
-			params.require(:deployment).permit(:version)
+			params.require(:deployment).permit(:title, :description)
 		end
 end

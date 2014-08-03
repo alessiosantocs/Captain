@@ -4,5 +4,9 @@ $headings_subtraction: 6px;
 @each $heading in 1,2,3,4,5,6{
 	h#{$heading}{
 		font-size: $headings_max - ($headings_subtraction * ($heading - 1));
+
+		small{
+			font-weight: 200;
+		}
 	}
 }

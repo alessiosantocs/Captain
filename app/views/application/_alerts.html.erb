@@ -1,0 +1,26 @@
+<!-- NOTICE/ALERT -->
+<div class="application_alerts">
+	<% if notice %>
+		<div class="alert alert-success">
+			<div class="container">
+				<%= notice %>
+			</div>
+		</div>
+	<% end %>
+	<% if alert %>
+		<div class="alert alert-danger">
+			<div class="container">
+				<%= alert %>
+			</div>
+		</div>
+	<% end %>
+	
+	<% if params[:public_token].present? %>
+		<div class="alert alert-success">
+			<div class="container">
+				Public link authorized
+			</div>
+		</div>
+	<% end %>
+</div>
+

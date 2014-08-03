@@ -1,0 +1,26 @@
+<!-- Title of the page section -->
+<% if (yield :title).present? %>
+	<section class="section-primary section-size-2 page-header">
+		<div class="container">
+			<div class="row">
+				<!-- The title itself -->
+				<div class="<%= if (yield :header_sidebar).present? then 'col-sm-7' else 'container' end%>">
+					<%= yield :title %>
+				</div>
+
+				<!-- The sidebar content -->
+				<% if (yield :header_sidebar).present? %>
+					<div class="col-sm-5">
+						<%= yield :header_sidebar %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+
+		<% if (yield :header_cover).present? %>
+			<div class="page-header-cover">
+				<%= yield :header_cover %>
+			</div>
+		<% end %>
+	</section>
+<% end %>
