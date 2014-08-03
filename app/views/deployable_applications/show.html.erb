@@ -2,6 +2,9 @@
 	<%= title @deployable_application.name, :wrapper_class => "" %>
 	<%= sub_title "Application's detail" %>
 <% end %>
+
+<% generate_header_cover "https://photos-6.dropbox.com/t/0/AABrfHS74mfXJYNvY4Wp4GfzyNseCVpZIPeB4p8KUZAFsQ/12/137066628/png/1024x768/3/1407081600/0/2/Screen%20Shot%202014-08-03%20at%2016.15.13.png/3L_ijlZsFEkupNbyWQdgHLdpiWBUDFQPNNnEg7433XY" %>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -32,7 +35,7 @@
 		<div class="list-group">
 			<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment, :public_token => params[:public_token]) %>" class="list-group-item">
 				<span class="badge"><%= latest_deployment.pull_requests.count %> pull requests</span>
-				<b>Deploy #<%= latest_deployment.id %></b> at <%= "#{latest_deployment.created_at}" %>
+				<b><%= latest_deployment.title %></b> at <%= "#{latest_deployment.created_at}" %>
 			</a>
 		</div>
 	</div>

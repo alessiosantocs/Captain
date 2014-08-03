@@ -229,12 +229,38 @@
 .da-row-container.da-row-size1 {
   padding: 50px 0px; }
 
+section.page-header {
+  border: none;
+  margin: 0;
+  padding: 0; }
+  section.page-header h1 {
+    margin-top: 0; }
+  section.page-header p.text {
+    margin-bottom: 0; }
+  section.page-header .container {
+    position: relative;
+    z-index: 1; }
+  section.page-header .page-header-cover {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.3; }
+    section.page-header .page-header-cover img {
+      width: 100%;
+      margin-top: -20%; }
+
 section {
   padding: 50px 0;
   position: relative; }
   section.section-primary {
     background: #1d6fb7;
     color: white; }
+    section.section-primary a {
+      color: white; }
   section.section-default {
     border-top: 1px solid #ccc; }
   section.section-size-1 {
@@ -268,21 +294,33 @@ section {
 
 h1 {
   font-size: 42px; }
+  h1 small {
+    font-weight: 200; }
 
 h2 {
   font-size: 36px; }
+  h2 small {
+    font-weight: 200; }
 
 h3 {
   font-size: 30px; }
+  h3 small {
+    font-weight: 200; }
 
 h4 {
   font-size: 24px; }
+  h4 small {
+    font-weight: 200; }
 
 h5 {
   font-size: 18px; }
+  h5 small {
+    font-weight: 200; }
 
 h6 {
   font-size: 12px; }
+  h6 small {
+    font-weight: 200; }
 
 .typo-brand-strong {
   font-family: "Courgette", cursive; }
@@ -309,7 +347,8 @@ h6 {
   color: #5cb85c; }
 
 p {
-  font-family: "Helvetica", Arial; }
+  font-family: "Helvetica", Arial;
+  font-weight: 100; }
   p.text {
     font-size: 19px; }
   p.lead {

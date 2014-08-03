@@ -1,20 +1,32 @@
 h1 {
   font-size: 42px; }
+  h1 small {
+    font-weight: 200; }
 
 h2 {
   font-size: 36px; }
+  h2 small {
+    font-weight: 200; }
 
 h3 {
   font-size: 30px; }
+  h3 small {
+    font-weight: 200; }
 
 h4 {
   font-size: 24px; }
+  h4 small {
+    font-weight: 200; }
 
 h5 {
   font-size: 18px; }
+  h5 small {
+    font-weight: 200; }
 
 h6 {
   font-size: 12px; }
+  h6 small {
+    font-weight: 200; }
 
 .typo-brand-strong {
   font-family: "Courgette", cursive; }
@@ -41,7 +53,8 @@ h6 {
   color: #5cb85c; }
 
 p {
-  font-family: "Helvetica", Arial; }
+  font-family: "Helvetica", Arial;
+  font-weight: 100; }
   p.text {
     font-size: 19px; }
   p.lead {

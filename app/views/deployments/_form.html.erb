@@ -1,21 +1,11 @@
-<%= form_for(@deployment) do |f| %>
-  <% if @deployment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@deployment.errors.count, "error") %> prohibited this deployment from being saved:</h2>
+<%= simple_form_for(@deployment) do |f| %>
 
-      <ul>
-      <% @deployment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<%= display_errors!(@deployment) %>
 
-  <div class="field">
-    <%= f.label :version %><br>
-    <%= f.text_field :version %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<%= f.input :title %>
+	<%= f.input :description %>
+
+	<%= btn_container do %>
+		<%= f.button :submit, :class => "btn-primary" %>
+	<% end %>
 <% end %>
