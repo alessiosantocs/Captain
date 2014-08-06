@@ -25,6 +25,17 @@
 	}
 
 
+	@-webkit-keyframes background-moving {
+		from{
+			background-position: left center, 0px;
+		}
+		to{
+			background-position: left center, 422px;
+		}
+	}
+
+
+
 
 // General declarations
 

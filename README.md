@@ -1,5 +1,5 @@
 #Captain
-This is the official documentation for Captain ([https://alessiosantocs.github.io/Captain](https://alessiosantocs.github.io/Captain))
+This is the official documentation for Captain ([https://captainrb.co](https://captainrb.co))
 
 ##What is it?
 Captain is a deployment tracking system. It tracks deployments of web applications by simply integrating into your app's deployment process.
@@ -20,7 +20,7 @@ For any other configuration, we'd be more than happy to listen what you have to 
 
 ##Getting started
 Using Captain should be very straight forward. 
-Let's have a look at how it integrates in different systems; but before that, create an account at [http://deploydapp.herokuapp.com](http://deploydapp.herokuapp.com) (or at your self-hosted application's url):
+Let's have a look at how it integrates in different systems; but before that, create an account at [http://app.captainrb.co](http://app.captainrb.co) (or at your self-hosted application's url):
 
 1. Authenticate with your SCM
 2. Create an application

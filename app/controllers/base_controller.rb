@@ -1,4 +1,12 @@
+
 class BaseController < ApplicationController
+	
+	enable_authorization do |exception|
+		# raise if Rails.env.development?
+		redirect_to new_user_session_url, :alert => "You're not authorized to see that page"
+	end
+
+	include ExceptionsHelper
 	include ApplicationHelper
 	include RedirectsHelper
 	include ValidatorHelper
@@ -8,4 +16,14 @@ class BaseController < ApplicationController
 	protect_from_forgery with: :exception
 
 	before_filter :handle_automated_redirects
+
+
+	# Fallbacks
+	rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
+	private
+		def not_found
+			redirect_to :root, alert: "Nothing like that has been found" and return
+		end
+
 end

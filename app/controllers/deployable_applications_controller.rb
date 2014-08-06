@@ -45,7 +45,11 @@ class DeployableApplicationsController < BaseController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_deployable_application
-			@deployable_application = current_user.deployable_applications.find(params[:id])
+			if user_signed_in?
+				@deployable_application = current_user.deployable_applications.find(params[:id])
+			else
+				@deployable_application = DeployableApplication.find_by_public_token(params[:public_token])
+			end
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.

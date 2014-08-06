@@ -56,7 +56,7 @@ namespace :pull_requests do
 
 			# Make a call to bitbucket
 			puts "Fetching Page ##{pagecount}"
-			query = bitbucket.pull_requests.list_repo user_app.repo_owner, user_app.repo_name, state: 'merged', sort: '-updated_on', pagelen: buffersize, page: pagecount
+			query = bitbucket.pull_requests.list_repo user_app.repo_owner, user_app.repo_name, state: 'MERGED', sort: '-updated_on', pagelen: buffersize, page: pagecount
 
 			# Loop each pull request in the response
 			# TODO: Change this [2] behavior

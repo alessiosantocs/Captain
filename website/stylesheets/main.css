@@ -19,6 +19,13 @@
   to {
     -webkit-transform: rotate(-2deg); } }
 
+@-webkit-keyframes background-moving {
+  from {
+    background-position: left center, 0px; }
+
+  to {
+    background-position: left center, 422px; } }
+
 .floating-ghost-animation {
   -webkit-animation: floating-ghost 4s ease infinite; }
 
@@ -206,7 +213,6 @@
 /*Row containers*/
 .da-row-container.da-row-main {
   padding: 250px 0px;
-  background-image: url(../images/resources/top-part.png), url(../images/resources/bottom-part.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center, bottom center; }
@@ -218,10 +224,34 @@
 .da-row-container.da-row-cta {
   background: #eee; }
 .da-row-container.da-row-inverse {
-  background-color: #1d6fb7;
+  background-color: #0b89ce;
   color: #fff; }
 .da-row-container.da-row-size1 {
   padding: 50px 0px; }
+
+section.page-header {
+  border: none;
+  margin: 0;
+  padding: 0; }
+  section.page-header h1 {
+    margin-top: 0; }
+  section.page-header p.text {
+    margin-bottom: 0; }
+  section.page-header .container {
+    position: relative;
+    z-index: 1; }
+  section.page-header .page-header-cover {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.3; }
+    section.page-header .page-header-cover img {
+      width: 100%;
+      margin-top: -20%; }
 
 section {
   padding: 50px 0;
@@ -229,6 +259,8 @@ section {
   section.section-primary {
     background: #1d6fb7;
     color: white; }
+    section.section-primary a {
+      color: white; }
   section.section-default {
     border-top: 1px solid #ccc; }
   section.section-size-1 {
@@ -262,27 +294,39 @@ section {
 
 h1 {
   font-size: 42px; }
+  h1 small {
+    font-weight: 200; }
 
 h2 {
   font-size: 36px; }
+  h2 small {
+    font-weight: 200; }
 
 h3 {
   font-size: 30px; }
+  h3 small {
+    font-weight: 200; }
 
 h4 {
   font-size: 24px; }
+  h4 small {
+    font-weight: 200; }
 
 h5 {
   font-size: 18px; }
+  h5 small {
+    font-weight: 200; }
 
 h6 {
   font-size: 12px; }
+  h6 small {
+    font-weight: 200; }
 
 .typo-brand-strong {
   font-family: "Courgette", cursive; }
 
 .typo-brand-weak {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial; }
 
 .text-primary {
   color: #1d6fb7; }
@@ -303,7 +347,8 @@ h6 {
   color: #5cb85c; }
 
 p {
-  font-family: Arial; }
+  font-family: "Helvetica", Arial;
+  font-weight: 100; }
   p.text {
     font-size: 19px; }
   p.lead {
@@ -313,7 +358,16 @@ p {
         font-size: 26px; } }
 
 body {
-  padding-top: 50px; }
+  padding-top: 50px;
+  font-family: "Helvetica", Arial; }
+
+#captain {
+  position: relative;
+  background-image: url(../images/resources/captain-character-02.png), url(../images/resources/background-pattern.png);
+  background-size: 59%, 422px;
+  background-position: left center;
+  background-repeat: no-repeat, repeat;
+  -webkit-animation: background-moving 20s linear infinite; }
 
 .vertically-aligned {
   width: 100%; }

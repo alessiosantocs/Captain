@@ -2,6 +2,9 @@
 	<%= title @deployable_application.name, :wrapper_class => "" %>
 	<%= sub_title "Application's detail" %>
 <% end %>
+
+<% generate_header_cover "https://photos-6.dropbox.com/t/0/AABrfHS74mfXJYNvY4Wp4GfzyNseCVpZIPeB4p8KUZAFsQ/12/137066628/png/1024x768/3/1407081600/0/2/Screen%20Shot%202014-08-03%20at%2016.15.13.png/3L_ijlZsFEkupNbyWQdgHLdpiWBUDFQPNNnEg7433XY" %>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -35,7 +38,7 @@
 			<div class="feed-body">
 				<h4>
 					<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>">
-						Deploy #<%= latest_deployment.id %> 
+						<%= latest_deployment.title %>
 					</a>
 					<%= "- #{time_ago_in_words latest_deployment.created_at} ago" %>
 				</h4>
@@ -52,7 +55,6 @@
 							<strong>Revision:</strong> <%= latest_deployment.revision %>
 						</div>
 					</div>
-
 
 					<!-- Pull requests -->
 					<div class="col-xs-7">
@@ -94,6 +96,7 @@
 
 
 	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
+
 <% elsif @deployable_application.installed  %>
 	<div class="alert alert-warning">
 		You have no deployments yet. Go <strong><i>cap production deploy</i></strong><%=  %> your application...

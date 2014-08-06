@@ -4,7 +4,6 @@
 <% end %>
 
 <% if @deployments.any? %>
-
 	<div class="feed-group timeline">
 		<% @deployments.each do |deployment| %>
 			<div class="feed-element">
@@ -15,7 +14,7 @@
 				<div class="feed-body">
 					<h4>
 						<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
-							Deploy #<%= deployment.id %> 
+							<%= deployment.title %>
 						</a>
 						<%= "- #{time_ago_in_words deployment.created_at} ago" %>
 					</h4>

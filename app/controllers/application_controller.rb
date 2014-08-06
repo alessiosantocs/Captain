@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	before_filter :set_resource, only: [:show, :update, :deleter, :edit]
+	
 
 	include FindHelper
 

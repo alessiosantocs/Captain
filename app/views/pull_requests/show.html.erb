@@ -24,6 +24,7 @@
 
 </table>
 
-ADD HERE STUFF FROM BITBUCKET
-<%= @pull_request.additional_info %>
-<%= @pull_request.additional_info[:links][:diff][:href] %>
+<div class="well">
+	<%= BlueCloth.new(@pull_request.additional_info.description).to_html.html_safe %>
+	<%#= @pull_request.additional_info[:links][:diff][:href] %>
+</div>

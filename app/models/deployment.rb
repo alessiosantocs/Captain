@@ -9,6 +9,10 @@ class Deployment < ActiveRecord::Base
 	# Has many associated pull requests
 	has_many :pull_requests
 
+	def title
+		self[:title] || "Deployment ##{id}"
+	end
+
 	def repo_name
 		match :repo_name
 	end
