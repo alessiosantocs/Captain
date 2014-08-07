@@ -18,9 +18,7 @@
 				<% end %>
 
 				<h5 class="feed-title">
-					<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
-						<%= deployment.author_name %> deployed <%= deployment.title %>
-					</a>
+					<%= link_to "#{deployment.author_name} deployed #{deployment.title}", deployable_application_deployment_url(@deployable_application, deployment, public_token_param) %>
 
 					<small class="small-suggestion">
 						<%= "#{time_ago_in_words(deployment.created_at).capitalize} ago" %>

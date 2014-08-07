@@ -53,6 +53,10 @@ body{
 		}
 	}
 
+	.navbar-header{
+		position: relative;
+	}
+
 	.navbar-brand{
 		color: $primary_color;
 		font-family: $font_brand_strong;
@@ -68,10 +72,23 @@ body{
 			padding: 3px 7px;
 		}
 
+		&.navbar-back-btn{
+			position: absolute;
+			right: 105%;
+		}
 
 		&:hover{
 			color: #4D4D4D;
 			background: #fafafa;
+		}
+	}
+
+
+	.navbar-toggle{
+		border-color: #ddd;
+
+		.icon-bar{
+			background: #ddd;
 		}
 	}
 }

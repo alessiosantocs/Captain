@@ -29,5 +29,6 @@ Deploydapp::Application.configure do
 
   config.assets.raise_runtime_errors = false
   # Action mailer default url
-  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ActionMailer::Base.delivery_method = :letter_opener
 end

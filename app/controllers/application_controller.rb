@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
-	before_filter :set_resource, only: [:show, :update, :deleter, :edit]
+	before_filter :set_resource, only: [:show, :update, :delete, :edit]
 	
 
 	include FindHelper
 
 	# DECLARE THE METHODS FINDER METHODS
 	FINDABLE_MODELS.each do |model|
-		define_method("find_" + model.to_s.tableize.singularize + "_by") do |colums, *args|
-			obj = model.send(("find_by_" + colums).to_sym, args)
+		define_method("find_" + model.to_s.tableize.singularize + "_by") do |columns, *args|
+			obj = model.send(("find_by_" + columns).to_sym, args)
 			raise ActiveRecord::RecordNotFound if obj.nil?
 
 			return obj
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 		# search the resource by id
 		resource_name			= params[:controller].singularize
 
-		if resource_name.present?
+		if resource_name.present? and resource_name.safe_constantize.present?
 			@fetched_resource 	= self.send("find_#{resource_name}_by", "id", params[:id])
 
 			# instance the resource variable with the name of his model

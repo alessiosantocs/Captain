@@ -25,6 +25,18 @@
 		</tbody>
 	</table>
 
+
+	<!-- Actions -->
+	<% if can? :update, :deployments %>
+		<div class="btn-group">
+			<!-- Public deployment link -->
+			<%= link_to deployable_application_deployments_url(@deployable_application, :public_token => @deployable_application.public_token), :target => :blank, :class => "btn btn-primary btn-outline-inverse btn-sm" do %>
+				<i class="glyphicon glyphicon-link"></i> Public link
+			<% end %>
+		</div>
+	<% end %>
+
+
 <% end %>
 
 

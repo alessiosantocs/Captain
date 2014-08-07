@@ -1,12 +1,18 @@
-<h2>Forgot your password?</h2>
+<%= title "Forgot your password?" %>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :class => "form form-horizontal"}) do |f| %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+	<% if notice %><div class="alert alert-success"><%= notice %></div><% end %>
+	<% if alert %><div class="alert alert-danger"><%= alert %></div><% end %>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+	<%= display_errors!(resource) %>
+
+	<%= f.input :email, :label => false, :placeholder => "Your email address" %>
+
+	<%= btn_container do %>
+		<%= f.button :button, 'Send me reset password instructions'.html_safe, :class => "btn btn-primary" %>
+	<% end %>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

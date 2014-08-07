@@ -141,4 +141,9 @@ module ApplicationHelper
 		end
 	end
 
+
+	def public_token_param
+		{:public_token => params[:public_token]}
+	end
+
 end
