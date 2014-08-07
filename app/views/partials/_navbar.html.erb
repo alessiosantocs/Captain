@@ -9,7 +9,12 @@
 				<span class="icon-bar"></span>
 			</button>
 			<%= link_to root_url, :class => "navbar-brand" do %>
-				<%= if @deployable_application.present? then "#{@deployable_application.name} <small>on Captain</small>".html_safe else "Captain" end %>
+				Captain
+				<% if @deployable_application.present? %>
+					<span class='label label-<%= (@deployable_application.installed?) ? 'success' : 'danger' %> deployable-application'>
+						<%= "#{@deployable_application.name}" %>
+					</span>
+				<% end %>
 			<% end %>
 		</div>
 

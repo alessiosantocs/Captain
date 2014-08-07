@@ -11,10 +11,12 @@ class PullRequest < ActiveRecord::Base
 			user = deployment.deployable_application.user
 			client = user.scm_client
 
-			unless Rails.env.development?
+			# Rescue the query to the scm
+			begin
 				var_additional_info = client.pull_requests.get(deployment.deployable_application.repo_owner, deployment.deployable_application.repo_name, pid)
+			rescue Exception => e
+				{}
 			end
-
 		end
 
 		result = var_additional_info
