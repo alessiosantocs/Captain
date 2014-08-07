@@ -54,7 +54,7 @@ body{
 
 	.navbar-brand{
 		color: $primary_color;
-		font-family: 'Courgette', cursive;
+		font-family: $font_brand_strong;
 
 		&:hover{
 			color: #4D4D4D;
