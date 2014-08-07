@@ -5,94 +5,36 @@
 
 <% generate_header_cover "https://photos-6.dropbox.com/t/0/AABrfHS74mfXJYNvY4Wp4GfzyNseCVpZIPeB4p8KUZAFsQ/12/137066628/png/1024x768/3/1407081600/0/2/Screen%20Shot%202014-08-03%20at%2016.15.13.png/3L_ijlZsFEkupNbyWQdgHLdpiWBUDFQPNNnEg7433XY" %>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Repo owner</th>
-			<th>Repo name</th>
-			<th>Repo address</th>
-			<th>Public token</th>
-		</tr>
-	</thead>
 
-	<tbody>
-		<tr>
-			<td><%= @deployable_application.repo_owner %></td>
-			<td><%= @deployable_application.repo_name %></td>
-			<td><%= @deployable_application.repo %></td>
-			<td><%= @deployable_application.public_token %></td>
-		</tr>
-	</tbody>
-</table>
+<!-- Side header table -->
+<% content_for :header_sidebar do %>
+	
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Repo</th>
+				<th>Token</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td><%= @deployable_application.repo_owner %> <%= @deployable_application.repo_name %></td>
+				<td><%= @deployable_application.public_token %></td>
+			</tr>
+		</tbody>
+	</table>
+
+<% end %>
+
 
 <% if @deployable_application.deployments.any? and latest_deployment = @deployable_application.deployments.last %>
-	<!-- The latest deploy you made -->
-	<h4>Last deployment</h4>
 
-	<div class="feed-group timeline">
-		<div class="feed-element">
-			<span class="feed-bullet">
-				<i class="glyphicon glyphicon-flag"></i>
-			</span>
-
-			<div class="feed-body">
-				<h4>
-					<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>">
-						<%= latest_deployment.title %>
-					</a>
-					<%= "- #{time_ago_in_words latest_deployment.created_at} ago" %>
-				</h4>
-
-				<div class="row">
-					<div class="col-xs-5">
-						<div>
-							<strong>Branch:</strong> <%= latest_deployment.branch %>
-						</div>
-						<div>
-							<strong>Environment:</strong> <%= latest_deployment.environment %>
-						</div>
-						<div>
-							<strong>Revision:</strong> <%= latest_deployment.revision %>
-						</div>
-					</div>
-
-					<!-- Pull requests -->
-					<div class="col-xs-7">
-						<% if latest_deployment.pull_requests.any? %>
-							<div>
-								<strong>Pull requests: </strong>
-							</div>
-							<% latest_deployment.pull_requests.first(5).each do |pull_request| %>
-								<div class="small">
-									<a href="#">
-										<strong>#<%= pull_request.pid %></strong>
-									</a>
-									<%= pull_request.title %>
-								</div>
-							<% end %>
-
-							<% if latest_deployment.pull_requests.count > 5 %>
-								<div>
-									<a href="<%= deployable_application_deployment_url(@deployable_application, latest_deployment) %>">
-										See other <%= latest_deployment.pull_requests.count - 5 %> pull requests
-									</a>
-								</div>
-							<% end %>
-						<% else %>
-							<div>
-								<strong>No pull requests deployed</strong>
-							</div>
-						<% end %>
-
-					</div>
-					
-				</div>
-				
-			</div>
-			
+	<div class="row">
+		<div class="col-sm-8">
+			<%= render :partial => "partials/timeline_with_deployments", :locals => {deployments: [latest_deployment] } %>
 		</div>
 	</div>
-
 
 
 	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
