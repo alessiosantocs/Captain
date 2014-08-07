@@ -9,8 +9,23 @@ class Deployment < ActiveRecord::Base
 	# Has many associated pull requests
 	has_many :pull_requests
 
+	# Returns the title and if no title has been added returns a fallback
 	def title
 		self[:title] || "Deployment ##{id}"
+	end
+
+	# Returns the description and if no description has been added returns a fallback
+	def description
+		self[:description] || "No description added"
+	end
+
+	# Returns the author of the deploy and if no author has been added returns a fallback
+	def author_name
+		self[:author_name] || "Someone"
+	end
+
+	def has_author?
+		self[:author_name].present?
 	end
 
 	def repo_name

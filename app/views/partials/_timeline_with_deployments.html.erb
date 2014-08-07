@@ -11,13 +11,15 @@
 
 			<div class="feed-body">
 				
-				<div class="feed-avatar">
-					<img src="https://pbs.twimg.com/profile_images/452872392105148416/YQogcQX4_bigger.jpeg">
-				</div>
+				<% if deployment.has_author? %>
+					<div class="feed-avatar">
+						<img src="https://pbs.twimg.com/profile_images/452872392105148416/YQogcQX4_bigger.jpeg">
+					</div>
+				<% end %>
 
 				<h5 class="feed-title">
 					<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
-						Alessio deployed <%= deployment.title %>
+						<%= deployment.author_name %> deployed <%= deployment.title %>
 					</a>
 
 					<small class="small-suggestion">
