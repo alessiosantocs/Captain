@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803122227) do
+ActiveRecord::Schema.define(version: 20140807130132) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20140803122227) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "description"
+    t.string   "author_name"
+    t.string   "author_email"
   end
 
   create_table "pull_requests", force: true do |t|
