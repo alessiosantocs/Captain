@@ -37,7 +37,7 @@
 	</div>
 
 
-	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application) %>
+	<%= link_to "See all deployments", deployable_application_deployments_url(@deployable_application), :class => "btn btn-default", :style => "margin-left: 40px;" %>
 
 <% elsif @deployable_application.installed  %>
 	<div class="alert alert-warning">
