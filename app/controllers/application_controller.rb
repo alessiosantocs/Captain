@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 		# search the resource by id
 		resource_name			= params[:controller].singularize
 
-		if resource_name.present? and resource_name.safe_constantize.present?
+		if resource_name.present? and resource_name.camelize.safe_constantize.present?
 			@fetched_resource 	= self.send("find_#{resource_name}_by", "id", params[:id])
 
 			# instance the resource variable with the name of his model

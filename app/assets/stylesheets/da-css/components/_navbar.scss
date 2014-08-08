@@ -1,0 +1,71 @@
+@import "../variables";
+
+/*Custom navbar*/
+.da-navbar{
+	border-bottom: 1px solid #eee;
+	margin-bottom: 0;
+	background: white;
+	.navbar-nav{
+		>li{
+			>a{
+				color: #999999;
+
+				&:hover{
+					color: #4D4D4D;
+					background: #fafafa;
+				}
+
+			}
+
+			&.active{
+				>a{
+					color: #4D4D4D;
+					background: #fafafa;
+				}
+			}
+		}
+	}
+
+	.navbar-header{
+		position: relative;
+	}
+
+	.navbar-brand{
+		color: $primary_color;
+		font-family: $font_brand_strong;
+		white-space: nowrap;
+
+		.deployable-application{
+			border-radius: 0;
+			font-family: "Helvetica";
+			font-weight: 200;
+			font-size: 12px;
+			position: relative;
+			top: -2px;
+			padding: 3px 7px;
+		}
+
+		&.navbar-back-btn{
+			position: absolute;
+			right: 105%;
+		}
+
+		&:hover{
+			color: #4D4D4D;
+			background: #fafafa;
+		}
+	}
+
+	.navbar-text{
+		color: #999;
+	}
+
+	.navbar-toggle{
+		border-color: #ddd;
+
+		.icon-bar{
+			background: #ddd;
+		}
+	}
+}
+
