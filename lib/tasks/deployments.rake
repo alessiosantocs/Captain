@@ -17,14 +17,17 @@ namespace :deployments do
 			deployable_application = DeployableApplication.find_by_id(params[:APP_ID])
 			_validate_presence_of deployable_application
 
+			commit_author_name = `git config --get user.name`
+			commit_author_email = `git config --get user.email`
+
 			# Add a deployment to the app
 			app_deployment = deployable_application.deployments.create!(
 				:repo => deployable_application.repo,
 				:branch => deployable_application.branch,
 				:environment => "production",
 				:revision => "58d96fde3b671d64cc597ac45d7a56edc9dcecdf",
-				:author_name => "Alessio Santo",
-				:author_email => "alessio.santocs@gmail.com"
+				:author_name => (commit_author_name || "Andrea Paciolla"),
+				:author_email => (commit_author_email || "andreapaciolla@gmail.com")
 			)
 
 			app_deployment.pull_requests.create!(

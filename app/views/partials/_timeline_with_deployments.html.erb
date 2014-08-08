@@ -13,7 +13,7 @@
 				
 				<% if deployment.has_author? %>
 					<div class="feed-avatar">
-						<img src="https://pbs.twimg.com/profile_images/452872392105148416/YQogcQX4_bigger.jpeg">
+						<%= image_tag avatar_url(deployment.author_email) %>
 					</div>
 				<% end %>
 
