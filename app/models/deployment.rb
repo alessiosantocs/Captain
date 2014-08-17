@@ -28,6 +28,10 @@ class Deployment < ActiveRecord::Base
 		self[:author_email] = email.gsub("\n", "")
 	end
 
+	def author_email
+		self[:author_email].gsub("\n", "")
+	end
+
 	def has_author?
 		self[:author_name].present?
 	end
