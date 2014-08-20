@@ -24,5 +24,6 @@ module Deploydapp
 
     # Serve assets in production
     config.serve_static_assets = true
+
   end
 end

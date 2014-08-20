@@ -1,6 +1,7 @@
 <nav id="app_main_navigation" class="navbar navbar-fixed-top da-navbar" role="navigation">
 
 	<div class="container">
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>
@@ -8,7 +9,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<%= link_to "Captain", root_url, :class => "navbar-brand" %>
+
+			<%= link_to '<i class="glyphicon glyphicon-arrow-left"></i>'.html_safe, :back, :class=>"navbar-brand navbar-back-btn" %>
+			<%= link_to root_url, :class => "navbar-brand" do %>
+				Captain
+				<% if @deployable_application.present? %>
+					<span class='label label-<%= (@deployable_application.installed?) ? 'success' : 'danger' %> deployable-application'>
+						<%= "#{@deployable_application.name}" %>
+					</span>
+				<% end %>
+			<% end %>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->

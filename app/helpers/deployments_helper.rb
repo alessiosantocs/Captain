@@ -5,7 +5,7 @@ module DeploymentsHelper
 	end
 
 	def deployment_subtitle(deployment)
-		description = deployment.description || "No description added"
+		description = deployment.description
 
 		description = description.gsub("\n", "<br>")
 

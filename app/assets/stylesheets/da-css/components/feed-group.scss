@@ -1,0 +1,145 @@
+@import "../variables";
+
+.feed-group{
+	margin-bottom: 30px;
+	position: relative;
+
+	$timeline_padding_space: 80px;
+	$timeline_line_width: 3px;
+	&.timeline{
+		padding: 20px 0;
+		padding-left: $timeline_padding_space * 2;
+		&:before{
+			content: "";
+			display: block;
+
+			width: $timeline_line_width;
+			background: #ddd;
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+
+			left: $timeline_padding_space * 1.5;
+		}
+	}
+
+	// A group that represents a single feed element
+	.feed-element{
+		position: relative;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+
+		// This is just the left-hand bullet
+		$bullet_size: 15px;
+		.feed-bullet{
+			display: block;
+			width: $bullet_size; height: $bullet_size;
+
+			top: 37%;
+
+			background: #ddd;
+			border-radius: 50%;
+
+			box-shadow: 0px 0px 0px 5px white;
+
+			position: absolute;
+			left: 1px - ($timeline_padding_space / 2 + ($bullet_size / 2));
+
+			text-align: center;
+			color: #ddd;
+
+			.bullet-label{
+				position: absolute;
+				right: 100%;
+				width: 160px;
+				text-align: right;
+				top: 0%;
+				font-size: 12px;
+				padding-right: 10px;
+			}
+
+			// Connector line
+			&:after{
+				content: "";
+				display: none;
+
+				width: 70px;
+				height: 2px;
+
+				position: relative;
+				top: $bullet_size / 2;
+
+				z-index: -1;
+
+				background: $primary_color;
+			}
+
+		}
+
+		// This is the main part of the feed
+		.feed-body{
+			background-color: #fff;
+			border: 2px solid transparent;
+			border-radius: 4px;
+			-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+
+			border-color: #ddd;
+
+			padding: 15px;
+
+			$avatar_size: 38px;
+			.feed-avatar{
+				display: inline-block;
+				background: #eee;
+
+				width: $avatar_size; height: $avatar_size;
+
+				margin-right: 10px;
+
+				float: left;
+
+				overflow: hidden;
+
+				img{
+					width: 100%;
+				}
+			}
+
+			.feed-title{
+				margin-top: 0;
+				font-weight: normal;
+
+				small{
+					&.small-suggestion{
+						display: block;
+						font-size: 13px;
+						margin-top: 5px;
+					}
+				}
+			}
+
+			.alert{
+				margin-bottom: 0;
+			}
+
+		}
+
+		&:hover, &.hover{
+			.feed-body{
+				border-color: $primary_color;
+			}
+
+			.feed-bullet{
+
+				background: $primary_color;
+				color: $primary_color;
+
+				&:after{
+					display: block;
+				}
+			}
+		}
+	}
+}

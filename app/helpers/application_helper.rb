@@ -133,12 +133,25 @@ module ApplicationHelper
 			end
 		end
 	end
+	# =======
+
+	# Right now getting the avatar from gravatar
+	def avatar_url(email)
+		gravatar_id = Digest::MD5::hexdigest(email).downcase
+		"http://gravatar.com/avatar/#{gravatar_id}.png"  
+	end
+	# =======
 
 
 	def generate_header_cover(url)
 		content_for :header_cover do
 			image_tag url
 		end
+	end
+
+
+	def public_token_param
+		{:public_token => params[:public_token]}
 	end
 
 end

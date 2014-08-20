@@ -37,8 +37,11 @@ class PullRequestsController < BaseController
 			if deployment_id = params[:deployment_id]
 				@deployment = Deployment.find_by_id(deployment_id)
 				@pull_request = @deployment.pull_requests.find(params[:id])
+				@deployable_application = @deployment.deployable_application
 			else
 				@pull_request = PullRequest.find(params[:id])
+				@deployment = @pull_request.deployment
+				@deployable_application = @pull_request.deployment.deployable_application
 			end
 		end
 

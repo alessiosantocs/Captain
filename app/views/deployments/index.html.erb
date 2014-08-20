@@ -1,41 +1,47 @@
 <% content_for :title do %>
-	<%= title "#{@deployable_application.name} deployments", :wrapper_class => "" %>
+	<%= title "#{@deployable_application.name}", :wrapper_class => "" %>
 	<%= sub_title "Listing all deployments" %>
 <% end %>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Repo owner</th>
-			<th>Repo name</th>
-			<th>Repo address</th>
-			<th>Public token</th>
-		</tr>
-	</thead>
+<!-- Side header table -->
+<% content_for :header_sidebar do %>
+	
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>Repo</th>
+				<th>Token</th>
+			</tr>
+		</thead>
 
-	<tbody>
-		<tr>
-			<td><%= @deployable_application.repo_owner %></td>
-			<td><%= @deployable_application.repo_name %></td>
-			<td><%= @deployable_application.repo %></td>
-			<td><%= @deployable_application.public_token %></td>
-		</tr>
-	</tbody>
-</table>
+		<tbody>
+			<tr>
+				<td><%= @deployable_application.repo_owner %> <%= @deployable_application.repo_name %></td>
+				<td><%= @deployable_application.public_token %></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<!-- Actions -->
+	<% if can? :update, :deployments %>
+		<div class="btn-group">
+			<!-- Public deployment link -->
+			<%= link_to deployable_application_deployments_url(@deployable_application, :public_token => @deployable_application.public_token), :target => :blank, :class => "btn btn-primary btn-outline-inverse btn-sm" do %>
+				<i class="glyphicon glyphicon-link"></i> Public link
+			<% end %>
+		</div>
+	<% end %>
+
+
+<% end %>
+
 
 <% if @deployments.any? %>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Deployment history</h3>
-		</div>
 
-		<div class="list-group">
-			<% @deployments.each do |deployment| %>
-				<a href="<%= deployable_application_deployment_url(@deployable_application, deployment, :public_token => params[:public_token]) %>" class="list-group-item">
-					<span class="badge"><%= deployment.pull_requests.count %> pull requests</span>
-					<b><%= deployment.title %></b> at <%= "#{deployment.created_at}" %>
-				</a>
-			<% end %>
+	<div class="row">
+		<div class="col-sm-8">
+			<%= render :partial => "partials/timeline_with_deployments", :locals => {deployments: @deployments } %>
 		</div>
 	</div>
 <% end %>

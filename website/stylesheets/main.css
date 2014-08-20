@@ -323,7 +323,7 @@ h6 {
     font-weight: 200; }
 
 .typo-brand-strong {
-  font-family: "Courgette", cursive; }
+  font-family: "Courgette", Sans-serif; }
 
 .typo-brand-weak {
   font-family: "Helvetica", Arial; }
@@ -387,7 +387,7 @@ body {
     background: #fafafa; }
   .da-navbar .navbar-brand {
     color: #1d6fb7;
-    font-family: 'Courgette', cursive; }
+    font-family: "Courgette", Sans-serif; }
     .da-navbar .navbar-brand:hover {
       color: #4D4D4D;
       background: #fafafa; }

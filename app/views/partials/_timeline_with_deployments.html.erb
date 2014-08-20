@@ -1,0 +1,72 @@
+
+<% deployments ||= [] %>
+
+<div class="feed-group timeline">
+
+	<% deployments.each do |deployment| %>
+		<div class="feed-element">
+			<span class="feed-bullet">
+				<span class="bullet-label"><%= formatted_time deployment.created_at %></span>
+			</span>
+
+			<div class="feed-body">
+				
+				<% if deployment.has_author? %>
+					<div class="feed-avatar">
+						<%= image_tag avatar_url(deployment.author_email) %>
+					</div>
+				<% end %>
+
+				<h5 class="feed-title">
+					<%= link_to "#{deployment.author_name} deployed #{deployment.title}", deployable_application_deployment_url(@deployable_application, deployment, public_token_param) %>
+
+					<small class="small-suggestion">
+						<%= "#{time_ago_in_words(deployment.created_at).capitalize} ago" %>
+					</small>
+				</h5>
+
+				<div>
+					<div>
+						<p>
+							<%= deployment.description %>
+						</p>
+					</div>
+
+					<hr>
+
+					<!-- Pull requests -->
+					<div>
+						<% if deployment.pull_requests.any? %>
+							<div>
+								<strong>Pull requests: </strong>
+							</div>
+							<% deployment.pull_requests.first(5).each do |pull_request| %>
+								<a href="<%= deployment_pull_request_url deployment, pull_request %>">
+									<strong>#<%= pull_request.pid %></strong>
+									<%= pull_request.title %>
+								</a>
+							<% end %>
+
+							<% if deployment.pull_requests.count > 5 %>
+								<div>
+									<a href="<%= deployable_application_deployment_url(@deployable_application, deployment) %>">
+										See other <%= deployment.pull_requests.count - 5 %> pull requests
+									</a>
+								</div>
+							<% end %>
+						<% else %>
+							<div class="alert alert-warning alert-sm">
+								No deployed pull requests
+							</div>
+						<% end %>
+
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	<% end %>
+
+</div>

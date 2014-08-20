@@ -35,7 +35,7 @@ class Api::V1::DeploymentsController < Api::V1::BaseController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def deployment_params
-			params.require(:deployment).permit(:branch, :environment, :revision, :repo)
+			params.require(:deployment).permit(:branch, :environment, :revision, :repo, :author_name, :author_email)
 		end
 
 		# Check if deploy branch are equals to settings

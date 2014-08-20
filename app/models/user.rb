@@ -71,5 +71,4 @@ class User < ActiveRecord::Base
 		email.split("@")[0] # first_name || last_name || 
 	end
 
-
 end

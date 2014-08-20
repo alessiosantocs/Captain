@@ -7,6 +7,7 @@
 @import "components/row_container";
 @import "components/forms";
 @import "components/typography";
+@import "components/navbar";
 
 body{
 	padding-top: 50px;
@@ -25,42 +26,6 @@ body{
 
 .vertically-aligned{
 	width: 100%;
-}
-
-/*Custom navbar*/
-.da-navbar{
-	border-bottom: 1px solid #eee;
-	margin-bottom: 0;
-	background: white;
-	.navbar-nav{
-		>li{
-			>a{
-				color: #999999;
-
-				&:hover{
-					color: #4D4D4D;
-					background: #fafafa;
-				}
-			}
-
-			&.active{
-				>a{
-					color: #4D4D4D;
-					background: #fafafa;
-				}
-			}
-		}
-	}
-
-	.navbar-brand{
-		color: $primary_color;
-		font-family: 'Courgette', cursive;
-
-		&:hover{
-			color: #4D4D4D;
-			background: #fafafa;
-		}
-	}
 }
 
 /*footer*/

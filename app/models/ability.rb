@@ -14,7 +14,7 @@ class Ability
 		# If not logged in
 			# Check if the user passed a token in
 			if DeployableApplication.find_by_public_token(params[:public_token]).present?
-				can :read, :deployable_applications 
+				can :read, :deployable_applications
 				can :read, :deployments
 			end
 		end
